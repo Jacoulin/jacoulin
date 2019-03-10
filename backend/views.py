@@ -3,8 +3,11 @@ from django.http import HttpResponse
 
 
 # 测试
+# def index(request):
+#     return HttpResponse('Hello, World')
+
 def index(request):
-    return HttpResponse('Hello, World')
+    return render(request, 'home.html')
 
 
 # 页面不存在
