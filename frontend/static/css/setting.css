@@ -1,0 +1,275 @@
+/*按钮*******************************************************************************************************************/
+.btn_save{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+}
+.btn_save:focus{
+    outline: none;
+}
+.btn_skip{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+}
+.btn_skip:focus{
+    outline: none;
+}
+/*个人信息整体架构********************************************************************************************************/
+.panel_personal{
+    border-radius: 5px;
+    -webkit-box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+    box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+}
+.panel_personal_head{
+    background: rgba(150, 150, 150, 1);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.panel_personal_body{
+    padding:80px 10px 0 10px;
+    background: rgba(255, 255, 255, 1);
+}
+.panel_personal_body .margin_top{
+    margin-top: 10px;
+    padding: 0;
+}
+.panel_head{
+    text-align: center;
+}
+.panel_row{
+    text-align: center;
+}
+.panel_row .span_username{
+    position: static;
+    height: 2em;
+    line-height: 2em;
+    display: inline-block;
+    font-size: 2em;
+    color:#999;
+}
+.panel_row .span_introduction{
+    display: inline-block;
+    line-height: 2em;
+    font-size: 1.1em;
+    color: #777;
+}
+.panel_row .span_show{
+    display: inline-block;
+    cursor: pointer;
+}
+.span_introduction p{
+    margin: 0;
+}
+.btn_focus, .btn_chat{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+}
+.panel_personal_foot{
+    padding: 30px 10px;
+    background: #ffffff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/*个人信息表单************************************************************************************************************/
+.panel_personal_info{
+    display: block;
+}
+.panel_personal_info .panel_row{
+    height: 40px;
+    line-height: 40px;
+}
+.panel_personal_info .span_line{
+    margin-top: 14.5px;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #ededed;
+}
+.panel_personal_info .span_desc{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.3em;
+    background-color: #eee;
+    color: #333;
+    border-radius: 20px;
+}
+.panel_personal_info .div_desc{
+    margin: 10px 0;
+}
+.panel_block{
+    color: #777;
+}
+.panel_block .panel_row{
+    text-align: left;
+}
+.panel_block .info_key{
+    display: inline-block;
+    width: 6em;
+    font-size: 1em;
+}
+.panel_block .info_val{
+    display: inline-block;
+}
+
+/*letter_spacing*********************************************************************************************************/
+.letter_space_0_5{
+    letter-spacing: 0.5em;
+}
+.letter_space_1_0{
+    letter-spacing: 1em;
+}
+.letter_space_1_5{
+    letter-spacing: 1.5em;
+}
+.letter_space_2_0{
+    letter-spacing: 2em;
+}
+/*form样式***************************************************************************************************************/
+
+input.userId{
+    display: none!important;
+}
+input.iconHead{
+    display: none!important;
+}
+.input_line {
+
+}
+.gender{
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.input_line  > input{
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.input_line  > input:hover{
+    border: 0;
+    border-bottom: 1px solid #5cb85c;
+}
+.input_line  > input:focus{
+    border: 0;
+    border-bottom: 1px solid #5cb85c;
+    outline:none;
+}
+
+
+/*裁剪头像****************************************************************************************************************/
+.modal-body>.row>.left_box {
+}
+.modal-body>.row>.left_box .thumbnail{
+    margin-bottom: 0;
+    height: 360px;
+}
+.modal-body>.row>.left_box .thumbnail>.image_view{
+    display: block;
+    border: 1px solid #ddd;
+    height: 300px;
+    line-height: 300px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    background: rgba(150, 150, 150, .3);
+}
+.modal-body>.row>.left_box .thumbnail>.image_view>img{
+    display: inline-block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -1px;
+}
+.modal-body>.row>.left_box .btn_choice_head{
+    text-align: center;
+}
+.modal-body>.row>.left_box a.choice_head{
+    width: 3em;
+    height: 3em;
+    display: inline-block;
+    line-height: 0;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.modal-body>.row>.left_box a.choice_head>.icon{
+    width: 3em;
+    height: 3em;
+}
+.modal-body>.row>.left_box a.choice_head>.icon:hover{
+    fill: #5cb85c;
+}
+
+.modal-body>.row>.right_box {
+}
+.modal-body>.row>.right_box >div{
+    margin: 10px 0;
+}
+.modal-body>.row>.right_box>.row{
+    margin: 30px 0;
+    text-align: center;
+}
+.modal-body>.row>.right_box .icon_lg{
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    line-height: 120px;
+    border-radius: 50%;
+    background-image: url("/dist/images/cat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: 2px solid rgba(150, 150, 150, .5);
+    text-align: center;
+}
+.modal-body>.row>.right_box .icon_md{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    line-height: 60px;
+    border-radius: 50%;
+    background-image: url("/dist/images/cat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: 2px solid rgba(150, 150, 150, .5);
+    text-align: center;
+}
+.modal-body>.row>.right_box .icon_sm{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    border-radius: 50%;
+    background-image: url("/dist/images/cat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: 2px solid rgba(150, 150, 150, .5);
+    text-align: center;
+}
+.modal-footer button{
+    margin: 10px 0;
+}

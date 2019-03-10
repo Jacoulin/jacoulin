@@ -1,0 +1,91 @@
+.inherit_width{
+    width: inherit;
+}
+.align_center{
+	text-align: center;
+}
+.background{
+   background-image: url(/dist/images/xiaozhi.png);
+   background-attachment: fixed;
+   background-size: cover;
+   background-repeat:no-repeat;
+   background-position: center;
+}
+.container_position{
+}
+.container_login {
+    position: inherit;
+    -webkit-box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+    box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+}
+.panel_login{
+    background: white;
+    padding: 5px;
+}
+.panel_login_head{
+	height: 90px;
+    background: rgba(150, 150, 150, 1);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.icon_head_big{
+	position: relative;
+	display: inline-block;
+	top: 30px;
+	width:120px;
+	height:120px;
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, .5);
+	background-image: url(/dist/images/xiaozhi.png);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+.panel_login_body{
+    padding:0 10px;
+    padding-top: 80px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    background: rgba(255, 255, 255, 1);
+}
+.btn_login{
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+}
+.text_register{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.text_register a{
+	text-decoration: none;
+	cursor: pointer;
+}
+.panel_login_foot{
+	margin-bottom: 5px;
+}
+.form_def {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form_def:focus{
+	border-color: #9fd3d6;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}

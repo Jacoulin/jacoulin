@@ -1,0 +1,166 @@
+/**************************************顶部提示栏**********************************************/
+.top_tips{
+	z-index: 1000;
+	width: inherit;
+	height: 55px;
+	position: fixed;
+	top: -55px;
+	background: rgba(0,0,0,1);
+	text-align: center;
+	padding-bottom: 5px;
+}
+.top_tips_success{
+	background: rgba(92,184,92,1);
+}
+.top_tips_failure{
+	background: rgba(213,77,73,1);
+}
+.top_tips > div{
+	background: rgba(255,255,255,1);
+}
+.top_tips > div > .icon{
+	vertical-align: middle;
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+}
+.top_tips > div > div.content{
+	vertical-align: middle;
+	display: inline-block;
+	color: #999999;
+	font-size: 1.1em;
+	height: 50px;
+	line-height: 50px;
+}
+
+/***********************************************日期选择器****************************************/
+.date_selection{
+	display: none;
+	width:200px;
+	position: fixed;
+	padding:10px 0;
+	top:50%;
+	left:50%;
+	z-index: 1000;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+	-moz-box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+	box-shadow: 0 3px 5px rgba(115, 115, 115, .5);
+    overflow-x: hidden;
+}
+.date_selection > div.left_back,div.right_back{
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    top:10px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+.date_selection > div.left_back{
+    left: 0;
+}
+.date_selection > div.left_back .icon{
+	width: 2em;
+	height: 2em;
+	fill: #cccccc;
+}
+.date_selection > div.left_back:hover .icon{
+	fill: #5cb85c;
+}
+.date_selection > div.right_back{
+    right: 0;
+}
+.date_selection > div.right_back .icon{
+	width: 2em;
+	height: 2em;
+	fill: #cccccc;
+}
+.date_selection > div.right_back:hover .icon{
+	fill: #5cb85c;
+}
+.date_selection > div.date_input{
+    display: inline-block;
+    width:100%;
+}
+.date_selection > div.date_input > input{
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	padding: 6px 30px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #5cb85c;
+	border: 0;
+	border-bottom: 1px solid #cccccc;
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.date_selection > div.date_input > input:hover{
+	border: 0;
+	border-bottom: 1px solid #5cb85c;
+}
+.date_selection > div.date_input > input:focus{
+	border: 0;
+	border-bottom: 1px solid #5cb85c;
+	outline:none;
+}
+.date_selection > div.date_list{
+	width: 608px;
+    position: relative;
+	left: 0px;
+}/*0   -206   -410*/
+.date_selection > div.date_list > ul {
+    width: 200px;
+    display: inline-block;
+	height: 150px;
+	padding: 0;
+	border: 0;
+    overflow-y: scroll;
+}
+.date_selection > div.date_list > ul > li{
+	padding-left: 10px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+	text-decoration: none;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.date_selection > div.date_list > ul > li:hover{
+	background-color: rgba(238, 238, 238, 1);
+}
+.date_selection > div.date_list > ul > li.visited{
+	background-color: rgba(238, 238, 238, 1);
+}
+.date_selection > div.date_save{
+	padding:0 5px;
+}
+.date_selection > div.date_save > button{
+	width: 100%;
+	height: 40px;
+	line-height: 1.42857143;
+	border-radius: 20px;
+	color: #333;
+	background-color: #fff;
+	display: inline-block;
+	margin-bottom: 0;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #cccccc;
+}
+.date_selection > div.date_save > button:hover{
+	border: 1px solid #5cb85c;
+}
+.date_selection > div.date_save > button:focus{
+	outline:none;
+}
