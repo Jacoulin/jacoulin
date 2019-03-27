@@ -1,0 +1,242 @@
+/*图标样式***************************************************************************************************************/
+
+.icon {
+    width: 2em;
+    height: 2em;
+    fill: #444;
+    overflow: hidden;
+}
+
+/*浮动*******************************************************************************************************************/
+
+.j-left,[left]{
+    float: left;
+}
+
+.j-right,[right]{
+    float: right;
+}
+
+/*容器*******************************************************************************************************************/
+
+.j-wrapper,[wrapper]{
+    padding-left: -15px;
+    padding-right: -15px;
+}
+
+/*滚动条样式*************************************************************************************************************/
+
+/*滚动条宽度*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* 轨道样式*/
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+
+/* Handle样式*/
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+}
+
+/*当前窗口未激活的情况下*/
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0,0,0,.1);
+}
+
+/*hover到滚动条上*/
+::-webkit-scrollbar-thumb:vertical:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+/*滚动条按下*/
+::-webkit-scrollbar-thumb:vertical:active{
+    background-color: rgba(0,0,0,0.7);
+}
+
+/*头像*******************************************************************************************************************/
+
+a.j-head-sm, a.j-head-md, a.j-head-lg{
+    display: inline-block;
+
+    border: 2px solid rgba(255, 255, 255, .5);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;;
+
+    cursor: pointer;
+}
+
+a.j-head-sm > img, a.j-head-md > img, a.j-head-lg > img{
+    position:relative;
+
+    width: inherit;
+    height: inherit;
+    line-height: inherit;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+a.j-head-sm {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+a.j-head-md {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+}
+
+a.j-head-lg{
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+}
+
+/*导航*******************************************************************************************************************/
+
+nav.j-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:60px;
+
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+
+    z-index:1000;
+}
+
+a.j-logo{
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+a.j-logo > img {
+    height: inherit;
+    line-height: inherit;
+}
+
+/*搜索*******************************************************************************************************************/
+
+.j-search{
+
+    width: 100px;
+    height: 30px;
+
+    border: 1px solid #aaa;
+}
+
+/*图片模态展示************************************************************************************************************/
+
+.j-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.9);
+
+    /*display: none;*/
+
+    text-align: center;
+
+    overflow: hidden;
+
+    z-index: 1001;
+}
+.j-modal-content {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.modal_content>img.width_than_height{
+    display: inline-block;
+    position: relative;
+    /*top: -29px;*/
+    width:100%;
+}
+.modal_content>img.height_than_width{
+    display: inline-block;
+    position: relative;
+    height:100%;
+}
+.modal_desc {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal_content, .modal_desc {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.modal_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2em;
+    transition: 0.3s;
+}
+
+.modal_close:hover,
+.modal_close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 800px){
+    .modal-content {
+        width: 100%;
+    }
+}
+@media only screen and (max-height: 800px){
+    .modal-content {
+        height: 100%;
+    }
+}
+
+/*文本封装****************************************************************************************************************/
+
+.j-text-1{
+
+}
