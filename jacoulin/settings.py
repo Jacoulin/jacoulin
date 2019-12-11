@@ -75,18 +75,18 @@ WSGI_APPLICATION = 'jacoulin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'j_microblog',
-        'USER': 'jacoulin',
-        'PASSWORD': 'jacoulin',
-        'HOST': 'www.jacoulin.top',
-        'PORT': '5232'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'j_microblog',
+#         'USER': 'jacoulin',
+#         'PASSWORD': 'jacoulin',
+#         'HOST': 'www.jacoulin.top',
+#         'PORT': '5232'
+#     }
+# }
 
 
 # Password validation
