@@ -9,14 +9,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6"></script>
+
 </head>
 <body>
 
-<audio id="audio">
-    <source src="爱的就是你.mp3" type="audio/mpeg" codecs="mp3"></source>
-</audio>
 
-<div class="j-main">
+
+<div id="main" class="j-main">
+
+    <audio id="audio" ref="j-audio" @loadedmetadata="getDuration()" @timeupdate="getCurrentTime()">
+        <source src="陈粒+-+小半.mp3" type="audio/mpeg" codecs="mp3"></source>
+    </audio>
 
     <div class="j-top">
 
@@ -41,6 +45,19 @@
                         <a>
                             <i class="mdi mdi-magnify mdi-24px"></i>
                         </a>
+                        <!--div style="
+                        /* width: 517px; */
+                        height: 100px;
+                        /* left: -39px; */
+                        border: 1px solid;
+                        box-shadow: azure;
+                        /* border-top: none; */
+                        box-sizing: border-box;
+                        position: relative;
+                        clear: both;
+                        top: 0;
+                        background: #fff;
+                    ">dfdfdf</div-->
                     </li>
 
 
@@ -94,450 +111,451 @@
             <!--
             <img src="../static/images/back_02.jpg"/>
             -->
+            <div class="j-list">
+                <table class="j-table j-table-rank">
+                    <thead>
+                    <tr class="j-tr-head">
+                        <th class="j-tw-10">序号</th>
+                        <th class="j-tw-70">
+                            <div class="wp">标题</div>
+                        </th>
+                        <th class="j-tw-10">
+                            <div class="wp">时长</div>
+                        </th>
+                        <th class="j-tw-10">
+                            <div class="wp">歌手</div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            1
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            2
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            3
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            4
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            5
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            6
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            7
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            8
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-white">
+                        <td class="j-tw-10">
+                            9
+                        </td>
+                        <td class="j-tw-70">
+                            灰姑娘
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
+                    <tr class="j-tr-gray">
+                        <td class="j-tw-10">
+                            10
+                        </td>
+                        <td class="j-tw-70">
+                            <i class="mdi mdi-play mdi-18px j-td-play"></i>
+                            灰姑娘
+                            <i class="mdi mdi-signal-cellular-2 mdi-24px j-td-play" right></i>
+                        </td>
+                        <td class="j-tw-10">
+                            04:53
+                        </td>
+                        <td class="j-tw-10">
+                            陈雪凝
+                        </td>
+                    </tr>
 
-            <table class="j-table j-table-rank">
-            <thead>
-            <tr class="j-tr-head">
-                <th class="j-tw-10">序号</th>
-                <th class="j-tw-70">
-                    <div class="wp">标题</div>
-                </th>
-                <th class="j-tw-10">
-                    <div class="wp">时长</div>
-                </th>
-                <th class="j-tw-10">
-                    <div class="wp">歌手</div>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    1
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    2
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    3
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    4
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    5
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    6
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    7
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    8
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-white">
-                <td class="j-tw-10">
-                    9
-                </td>
-                <td class="j-tw-70">
-                    灰姑娘
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
-            <tr class="j-tr-gray">
-                <td class="j-tw-10">
-                    10
-                </td>
-                <td class="j-tw-70">
-                    <i class="mdi mdi-play mdi-18px j-td-play"></i>
-                    灰姑娘
-                    <i class="mdi mdi-signal-cellular-2 mdi-24px j-td-play" right></i>
-                </td>
-                <td class="j-tw-10">
-                    04:53
-                </td>
-                <td class="j-tw-10">
-                    陈雪凝
-                </td>
-            </tr>
 
 
-
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </div>
@@ -545,14 +563,14 @@
     <div class="j-bottom">
         <div class="j-bottom-wrap">
             <div id="j-process" control="false">
-                <div id="j-process-back" @click="pause()">00:00</div>
+                <div id="j-process-back">{{currentTime}}</div>
                 <div id="j-process-bar" @mouseover="hover()">
                     <div id="j-process-load"></div>
                     <div id="j-process-play">
                         <div id="j-process-drag"></div>
                     </div>
                 </div>
-                <div id="j-process-next" @click="pause()">05:00</div>
+                <div id="j-process-next">{{duration}}</div>
             </div>
             <div id="j-control">
                 <div id="j-control-wrap">
@@ -563,7 +581,8 @@
                     </div>
                     <div id="play" @click="play()">
                         <a>
-                            <i class="mdi mdi-play mdi-48px"></i>
+                            <!-- <i class="mdi mdi-play mdi-48px"></i> -->
+                            <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
                         </a>
                     </div>
                     <div id="next">
@@ -575,5 +594,9 @@
             </div>
         </div>
     </div>
+</div>
+
+<script src="./index.js"></script>
+
 </body>
 </html>

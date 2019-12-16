@@ -134,7 +134,8 @@ body {
 }
 
 .j-main{
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     height: 100vh;
     margin: 0 auto;
 }
@@ -159,10 +160,10 @@ body {
 
 .j-top-wrap{
     position: relative;
-    width: 1024px;
+    width: inherit;
     height: inherit;
     margin: 0 auto;
-    padding: 5px 10px 0 10px;
+    padding: 5px 10px 5px 10px;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -275,12 +276,40 @@ body {
 
 }
 
-.j-middle{
+
+.j-top{
     position: relative;
-    width: 1024px;
-    height: calc(100% - 175px);
     top: 0;
     left: 0;
+    width: 100%;
+
+    /*-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);*/
+    /*-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .8);*/
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, .8);*/
+
+    z-index:1000;
+
+    /*background-color: #9d9d9d;*/
+
+}
+
+.j-middle{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 180px);
+    top: 0;
+    left: 0;
+
+
+
+}
+
+.j-middle-wrap{
+    position: relative;
+    width: inherit;
+    height: 100%;
+    margin: 0 auto;
+
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -290,21 +319,10 @@ body {
     overflow-x: hidden;
 
     background-color: #fff;
-
 }
 
-.j-middle-wrap{
-    position: relative;
-    width: inherit;
-    height: calc(100% - 20px);
-    margin: 0 auto;
+.j-list{
     padding: 0 10px;
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    background-color: #fff;
 }
 
 .j-table{
@@ -387,7 +405,7 @@ body {
 }
 
 .j-bottom{
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -397,7 +415,7 @@ body {
 
 .j-bottom-wrap{
     position: relative;
-    width: 1024px;
+    width: inherit;
     height: inherit;
     margin: 0 auto;
     padding: 10px;
@@ -512,6 +530,8 @@ body {
     margin: 0 auto;
     text-align: center;
 
+    font-size: 0;
+
 }
 
 #j-control-wrap div {
@@ -522,6 +542,7 @@ body {
 
     vertical-align: middle;
     line-height: 1;
+
 }
 
 /*#j-bottom[show='true'] #j-process[control='false']:hover #j-process-bar {*/
