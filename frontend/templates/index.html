@@ -45,7 +45,7 @@
                         <a>
                             <i class="mdi mdi-magnify mdi-24px"></i>
                         </a>
-                        <!--div style="
+                        <div style="
                         /* width: 517px; */
                         height: 100px;
                         /* left: -39px; */
@@ -55,9 +55,9 @@
                         box-sizing: border-box;
                         position: relative;
                         clear: both;
-                        top: 0;
+                        top: 10px;
                         background: #fff;
-                    ">dfdfdf</div-->
+                    ">{{ result }}</div>
                     </li>
 
 
@@ -564,10 +564,10 @@
         <div class="j-bottom-wrap">
             <div id="j-process" control="false">
                 <div id="j-process-back">{{currentTime}}</div>
-                <div id="j-process-bar" @mouseover="hover()">
+                <div id="j-process-bar" ref="j-process-bar">
                     <div id="j-process-load"></div>
-                    <div id="j-process-play">
-                        <div id="j-process-drag"></div>
+                    <div id="j-process-play" ref="j-process-play">
+                        <div id="j-process-drag" @mousedown="move"></div>
                     </div>
                 </div>
                 <div id="j-process-next">{{duration}}</div>

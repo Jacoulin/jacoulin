@@ -12,6 +12,8 @@ let main = new Vue({
         maximized: false,
         currentTime: "00:00",
         duration: "00:00",
+        result: "测试",
+        positionX: 0,
     },
     methods: {
         play: function () {
@@ -42,11 +44,10 @@ let main = new Vue({
         },
         getCurrentTime: function () {
             let tmp = Math.floor(this.$refs['j-audio'].currentTime);
+
             if (tmp >= 1){
                 this.currentTime = this.cont(tmp,'mm:ss');
             }
-
-            console.log("currentTime:" + this.currentTime + "\t" + "duration:" + this.duration)
 
             if (this.currentTime === this.duration){
                 this.played = false;
@@ -79,6 +80,38 @@ let main = new Vue({
                 //当读取完成后回调这个函数,然后此时文件的内容存储到了result中,直接操作即可
                 console.log(this.result);
             }
+        },
+        move: function (e) {
+            let tar = e.target;        //获取目标元素
+
+            let el = this.$refs['j-process-play'];
+
+            //算出鼠标相对元素的位置
+            let disX = e.clientX - el.offsetWidth;
+
+            console.log(el.offsetWidth);
+            document.onmousemove = (e)=>{       //鼠标按下并移动的事件
+                //用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
+                let left = e.clientX - disX;
+
+                console.log("disX"+disX+" clientX:"+e.clientX+" left:"+left);
+
+                //移动当前元素
+
+                if (left < 0) {
+                    el.style.width = 0 + 'px';
+                }else if (left >= 884){
+                    el.style.width = this.$refs['j-process-bar'].style.width + 'px';
+                } else {
+                     el.style.width = left + 'px';
+                }
+
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+            };
+            document.onmouseup = (e) => {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
         }
     }
 });
