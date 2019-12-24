@@ -440,9 +440,9 @@ body {
 	position: relative;
 	vertical-align: middle;
 	text-align: center;
-	width: 44px;
-	height: 28px;
-	line-height: 28px;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
 	float: left;
 
     color: #C65146;
@@ -453,9 +453,9 @@ body {
 	position: relative;
 	vertical-align: middle;
 	text-align: center;
-	width: 44px;
-	height: 28px;
-	line-height: 28px;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
 	float: right;
 
     color: #C65146;
@@ -466,14 +466,18 @@ body {
 	position: absolute ;
 	vertical-align: middle;
 	/* width: 100%; */
-	height: 4px;
+	height: 2px;
 	top: 50%;
     left: 50%;
 	width: calc(100% - 120px);
 	transform: translate(-50%, -50%);
-	border-radius: 3px;
+	border-radius: 2px;
 	background-color: #aaa;
 	float: left;
+}
+
+#j-process-bar:hover{
+    height: 4px;
 }
 
 #j-process-load {
@@ -486,7 +490,7 @@ body {
 
 #j-process-play {
 	position: absolute;
-	width: 50%;
+	width: 0%;
 	height: inherit;
 	border-radius: 3px;
 	background-color: #C65146;
@@ -524,10 +528,12 @@ body {
 
 #j-control-wrap {
     position: relative;
-    width: 30%;
+    display: inline-block;
+
     height: 60px;
     line-height: 60px;
-    margin: 0 auto;
+    transform: translate(-50%, 0%);
+    left: 50%;
     text-align: center;
 
     font-size: 0;

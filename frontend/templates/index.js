@@ -39,20 +39,31 @@ let main = new Vue({
 
         },
         getDuration: function () {
-            let tmp = Math.floor(this.$refs['j-audio'].duration);
-            this.duration = this.cont(tmp, 'mm:ss');
+            let duration = Math.floor(this.$refs['j-audio'].duration);
+            this.duration = this.cont(duration, 'mm:ss');
         },
         getCurrentTime: function () {
-            let tmp = Math.floor(this.$refs['j-audio'].currentTime);
+            let currentTime = Math.floor(this.$refs['j-audio'].currentTime);
+            let duration = Math.floor(this.$refs['j-audio'].duration);
 
-            if (tmp >= 1){
-                this.currentTime = this.cont(tmp,'mm:ss');
+            if (currentTime >= 1){
+                this.currentTime = this.cont(currentTime,'mm:ss');
             }
+
+            let rate = currentTime / duration * 100;
+            this.$refs['j-process-play'].style.width = rate + '%';
 
             if (this.currentTime === this.duration){
                 this.played = false;
                 this.$refs['j-audio'].pause();
             }
+        },
+        setDuration: function (time) {
+
+        },
+        setCurrentTime: function (time) {
+            this.currentTime = this.cont(time, 'mm:ss');
+            this.$refs['j-audio'].currentTime = time;
         },
         screenMax: function () {
             j_video_screen.$el.width = 560;
@@ -89,25 +100,28 @@ let main = new Vue({
             //算出鼠标相对元素的位置
             let disX = e.clientX - el.offsetWidth;
 
-            console.log(el.offsetWidth);
             document.onmousemove = (e)=>{       //鼠标按下并移动的事件
-                //用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
+                // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
                 let left = e.clientX - disX;
 
-                console.log("disX"+disX+" clientX:"+e.clientX+" left:"+left);
-
-                //移动当前元素
+                // 移动当前元素
 
                 if (left < 0) {
-                    el.style.width = 0 + 'px';
-                }else if (left >= 884){
-                    el.style.width = this.$refs['j-process-bar'].style.width + 'px';
-                } else {
-                     el.style.width = left + 'px';
+                    left = 0;
+                }else if (left >= this.$refs['j-process-bar'].offsetWidth){
+                    left = this.$refs['j-process-bar'].offsetWidth;
                 }
 
+                let rate = left / this.$refs['j-process-bar'].offsetWidth * 100;
+
+                this.$refs['j-process-bar'].height = '4px';
+                el.style.width = rate + '%';
+                this.setCurrentTime(Math.floor(rate * this.$refs['j-audio'].duration / 100) );
+
+                // 防止选择内容
                 window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
             };
+
             document.onmouseup = (e) => {
                 document.onmousemove = null;
                 document.onmouseup = null;
