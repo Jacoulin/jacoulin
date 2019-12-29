@@ -114,7 +114,7 @@ let main = new Vue({
 
                 let rate = left / this.$refs['j-process-bar'].offsetWidth * 100;
 
-                this.$refs['j-process-bar'].height = '4px';
+                this.$refs['j-process-bar'].style.height = '4px';
                 el.style.width = rate + '%';
                 this.setCurrentTime(Math.floor(rate * this.$refs['j-audio'].duration / 100) );
 

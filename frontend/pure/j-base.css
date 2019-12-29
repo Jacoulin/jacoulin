@@ -515,18 +515,10 @@ body {
 #j-control {
 	position: relative;
     width: 100%;
-
-    top: 50%;
-
-    -webkit-transform: translateY(-45px);
-    -moz-transform: translateY(-45px);
-    -ms-transform: translateY(-45px);
-    -o-transform: translateY(-45px);
-    transform: translateY(-45px);
-
 }
 
-#j-control-wrap {
+#j-control-wrap
+,#j-control-wrap-right {
     position: relative;
     display: inline-block;
 
@@ -538,6 +530,12 @@ body {
 
     font-size: 0;
 
+    background: #ccc;
+
+}
+
+#j-control-wrap-right{
+    font-size: 24px;
 }
 
 #j-control-wrap div {
@@ -549,6 +547,16 @@ body {
     vertical-align: middle;
     line-height: 1;
 
+}
+
+#j-control-wrap-right div{
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    color: #C65146;
+
+    vertical-align: middle;
+    line-height: 1;
 }
 
 /*#j-bottom[show='true'] #j-process[control='false']:hover #j-process-bar {*/
