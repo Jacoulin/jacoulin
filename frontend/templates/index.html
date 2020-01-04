@@ -20,7 +20,7 @@
 
     <audio id="audio" ref="j-audio" @loadedmetadata="getDuration()" @timeupdate="getCurrentTime()">
         <!--source src="陈粒+-+小半.mp3" type="audio/mpeg" codecs="mp3"></source-->
-        <source src="http://up_mp4.t57.cn/2017/1/11m/11/304112002347.m4a" type="audio/mpeg" codecs="mp3"></source>
+        <source src="https://win-web-rh01-sycdn.kuwo.cn/855ee26eb8d369d84d63626f693f0ef4/5e0eb694/resource/n1/60/68/1671896015.mp3" type="audio/mpeg" codecs="mp3"></source>
     </audio>
 
     <div class="j-top">
@@ -64,7 +64,7 @@
 
                     <li>
                         <a href="index.html">
-                            <i class="mdi mdi-signal-cellular-2 mdi-24px"></i>
+                            <i class="mdi mdi-poll mdi-24px"></i>
                         </a>
                     </li>
 
@@ -574,6 +574,13 @@
                 <div id="j-process-next">{{duration}}</div>
             </div>
             <div id="j-control">
+                <div id="j-control-wrap-left">
+                    <div>
+                        <a>
+                            <i class="mdi mdi-file-document-box-outline mdi-24px"></i>
+                        </a>
+                    </div>
+                </div>
                 <div id="j-control-wrap">
                     <div id="next">
                         <a>
@@ -593,9 +600,16 @@
                     </div>
                 </div>
                 <div id="j-control-wrap-right">
-                    <a>
-                        <i class="mdi mdi-file-document-box-outline"></i>
-                    </a>
+                    <div>
+                        <a>
+                            <i class="mdi mdi-shuffle mdi-24px"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            <i class="mdi mdi-file-document-box-outline mdi-24px"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

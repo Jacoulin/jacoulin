@@ -514,28 +514,42 @@ body {
 
 #j-control {
 	position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
+    height: 70px;
+
+    font-size: 0;
 }
-
-#j-control-wrap
+#j-control-wrap-left
+,#j-control-wrap
 ,#j-control-wrap-right {
-    position: relative;
-    display: inline-block;
-
-    height: 60px;
-    line-height: 60px;
-    transform: translate(-50%, 0%);
-    left: 50%;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
 
     font-size: 0;
 
-    background: #ccc;
+}
 
+#j-control-wrap-left{
+    position: absolute;
+    left: 0;
 }
 
 #j-control-wrap-right{
-    font-size: 24px;
+    position: absolute;
+    right: 0;
+
+}
+
+#j-control-wrap-left div{
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    color: #ccc;
 }
 
 #j-control-wrap div {
@@ -544,19 +558,14 @@ body {
     margin: 0 10px;
     color: #C65146;
 
-    vertical-align: middle;
-    line-height: 1;
-
 }
-
 #j-control-wrap-right div{
     position: relative;
     display: inline-block;
-    margin: 0 10px;
-    color: #C65146;
+    margin-left: 20px;
+    /*color: #C65146;*/
+    color: #ccc;
 
-    vertical-align: middle;
-    line-height: 1;
 }
 
 /*#j-bottom[show='true'] #j-process[control='false']:hover #j-process-bar {*/
