@@ -110,6 +110,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 }
 
+.j-active{
+    color: #C65146;
+}
+
 body {
     margin: 0;
 
@@ -430,6 +434,9 @@ body {
 
 #j-process {
 	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 	height: 30px;
 	width: 100%;
 	/* 避免被后面的元素覆盖层级 */
@@ -438,26 +445,12 @@ body {
 
 #j-process-back {
 	position: relative;
-	vertical-align: middle;
-	text-align: center;
-	width: 50px;
-	height: 30px;
-	line-height: 30px;
-	float: left;
-
     color: #C65146;
     
 }
 
 #j-process-next {
 	position: relative;
-	vertical-align: middle;
-	text-align: center;
-	width: 50px;
-	height: 30px;
-	line-height: 30px;
-	float: right;
-
     color: #C65146;
     
 }
@@ -637,6 +630,9 @@ a.j-head-lg{
 
 nav.j-nav{
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     left: 0;
     width: 100%;
@@ -644,10 +640,9 @@ nav.j-nav{
 }
 
 a.j-logo{
-    height: 50px;
-    line-height: 50px;
     overflow: hidden;
     cursor: pointer;
+    font-size: 24px;
     color: #C65146;
 }
 
@@ -668,24 +663,19 @@ a.j-logo > img {
 nav.j-nav > ul{
     position: relative;
 
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
     width: 50%;
     height: 50px;
-    line-height: 50px;
     margin: 0;
     padding: 0;
     
 }
 
 nav.j-nav > ul > li{
-    display: inline-block;
-    height: 50px;
-    line-height: 50px;
-    margin: 0;
     margin-right: 10px;
     padding: 0;
-
-    float: left;
 
     text-decoration: none;
     list-style-type: none;
@@ -703,19 +693,10 @@ nav.j-nav > ul > li > a{
 
 .j-search-group{
     position: relative;
-    width: calc(100% - 68px);
+    display: inline-flex;
+    align-items: center;
+    width: calc(100% - 70px);
     height: 40px !important;
-    line-height: 40px !important;
-
-    display: inline-block;
-
-    top: 50%;
-
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY( -50%);
-    -o-transform: translateY(-50%);
-    transform: translateY( -50%);
 
     /*left: 50%;*/
     /*top: 50%;*/
@@ -731,14 +712,14 @@ nav.j-nav > ul > li > a{
 .j-search{
     width: 100%;
     height: inherit;
-    display: inline-block;
-
+    display: inline-flex;
+    align-items: center;
     background: none;
     outline: none;
     border: none;
     -webkit-appearance: none;
 
-    padding: 6px 40px 6px 12px;
+    padding: 6px 40px 6px 40px;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -769,13 +750,7 @@ nav.j-nav > ul > li > a{
 }
 
 .j-search-group > a{
-    position: absolute;
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-
-    right: 0;
 
     text-align: center;
 
@@ -787,10 +762,36 @@ nav.j-nav > ul > li > a{
 
     cursor: pointer;
 
+    font-size: 0;
+
 }
 
 .j-search-group > a:hover{
     color: #C65146 !important;
+}
+
+.j-btn-clear
+,.j-btn-search
+,.j-btn-playing{
+    display: inline-block;
+    font-size: 0;
+}
+
+.j-btn-search{
+    position: absolute;
+    left: 10px;
+}
+
+.j-btn-clear{
+    position: absolute;
+    display: none;
+    right: 10px;
+}
+
+.j-btn-clear > a
+,.j-btn-search > a
+,.j-btn-playing > a{
+    color: #C65146;
 }
 
 /*选项*******************************************************************************************************************/
@@ -899,4 +900,14 @@ nav.j-nav > ul > li > a{
 
 .j-text-1{
 
+}
+
+.j-lyric-middle{
+    text-align: center;
+    width: 600px;
+    height: 800px;
+    margin: 0 auto;
+    color: #fff;
+    overflow: scroll;
+    background-image: url("../static/images/back_01.jpg");
 }
