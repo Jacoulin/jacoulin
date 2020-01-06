@@ -917,13 +917,10 @@ nav.j-nav > ul > li > a {
     margin: 0 auto;
     color: #fff;
     overflow: scroll;
-    background-image: url("../static/images/back_01.jpg");
 }
 
 .cls-1 {
     fill: #be4f45;
-    stroke: #fff;
-    stroke-miterlimit: 10;
 }
 
 .cls-2 {
