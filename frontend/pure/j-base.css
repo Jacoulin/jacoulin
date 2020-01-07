@@ -298,6 +298,7 @@ body {
 }
 
 .j-middle {
+
     position: relative;
     width: 100%;
     height: calc(100% - 180px);
@@ -308,6 +309,8 @@ body {
 }
 
 .j-middle-wrap {
+    display: flex;
+    align-items: center;
     position: relative;
     width: inherit;
     height: 100%;
@@ -910,13 +913,41 @@ nav.j-nav > ul > li > a {
 
 }
 
+.j-lyric{
+    width: 600px;
+}
+
+.j-lyric-top {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.j-lyric-vinyl {
+    display: inline-block;
+    width: 240px;
+    height: 300px;
+}
+
+.j-lyric-btn{
+    position: absolute;
+    right: 80px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
 .j-lyric-middle {
     text-align: center;
     width: 600px;
-    height: 800px;
+    height: 200px;
     margin: 0 auto;
-    color: #fff;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .cls-1 {
