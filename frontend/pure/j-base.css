@@ -706,7 +706,7 @@ nav.j-nav > ul > li > a {
     position: relative;
     display: inline-flex;
     align-items: center;
-    width: calc(100% - 70px);
+    /*width: calc(100% - 70px);*/
     height: 40px !important;
 
     /*left: 50%;*/
@@ -1001,4 +1001,20 @@ nav.j-nav > ul > li > a {
     fill: #be4f45;
     stroke: #231815;
     stroke-miterlimit: 10;
+}
+
+.j-comment-push{
+    padding: 2px;
+    background-color: #be4f45;
+    border-radius: 5px;
+}
+
+.j-comment-text{
+    display: block;
+    padding: 3px;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+
+    box-sizing: border-box;
 }
