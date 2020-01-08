@@ -928,11 +928,13 @@ nav.j-nav > ul > li > a {
 
 .j-lyric-top {
     position: relative;
+    width: inherit;
+    height: 300px;
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 600px;
-    height: 300px;
+
     margin: 0 auto;
     color: #fff;
 }
@@ -945,15 +947,16 @@ nav.j-nav > ul > li > a {
 
 .j-lyric-btn{
     position: absolute;
-    right: 80px;
-    display: inline-block;
     width: 60px;
     height: 60px;
+    right: 80px;
+    display: inline-block;
+
 }
 
 .j-lyric-middle {
     text-align: center;
-    width: 600px;
+    width: inherit;
     height: calc(100% - 350px);
     margin: 0 auto;
     overflow-y: scroll;
@@ -961,9 +964,21 @@ nav.j-nav > ul > li > a {
 
 .j-lyric-bottom{
     display: flex;
+    width: inherit;
+    height: 50px;
     align-items: flex-end;
     justify-content: center;
-    height: 50px;
+}
+
+.j-lyric-bottom_wrap{
+    display: flex;
+    align-items: center;
+    color: #be4f45;
+    font-size: 0;
+}
+
+.j-lyric-bottom_wrap div {
+    margin: 0 10px;
 }
 
 .cls-1 {
