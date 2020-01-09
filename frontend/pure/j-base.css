@@ -330,6 +330,7 @@ body {
 .j-comment{
     width: 100%;
     height: 100%;
+    padding: 0 10px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -590,50 +591,6 @@ body {
 /*	height: 8px;*/
 /*	top: -4px;*/
 /*}*/
-
-
-/*头像*******************************************************************************************************************/
-
-a.j-head-sm, a.j-head-md, a.j-head-lg {
-    display: inline-block;
-
-    border: 2px solid rgba(255, 255, 255, .5);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;;
-
-    cursor: pointer;
-}
-
-a.j-head-sm > img, a.j-head-md > img, a.j-head-lg > img {
-    position: relative;
-
-    width: inherit;
-    height: inherit;
-    line-height: inherit;
-
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-
-a.j-head-sm {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-}
-
-a.j-head-md {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-}
-
-a.j-head-lg {
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
-}
 
 
 /*导航*******************************************************************************************************************/
@@ -1005,8 +962,10 @@ nav.j-nav > ul > li > a {
 
 .j-comment-push{
     padding: 2px;
-    background-color: #be4f45;
-    border-radius: 5px;
+}
+
+.j-comment-text-wrap{
+    box-sizing: border-box;
 }
 
 .j-comment-text{
@@ -1015,6 +974,147 @@ nav.j-nav > ul > li > a {
     width: 100%;
     height: 120px;
     background-color: white;
+    resize: none;
+    border: 1px solid #ddd;
+    outline: none;
 
+    box-sizing: border-box;
+}
+
+.j-comment-bar{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.j-btn-emotion{
+    font-size: 0;
+}
+
+.j-btn-emotion{
+    color: #ddd;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.j-btn-push{
+    cursor: pointer;
+}
+
+.j-btn-push > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 1px solid #be4f45;
+    background: #be4f45;
+    color: #fff;
+    font-size: 14px;
+}
+
+.j-comment-list {
+    box-sizing: border-box;
+}
+
+.j-title-line {
+
+}
+
+.j-title-line > .j-title{
+    font-style: italic;
+}
+
+.j-title-line > .j-line{
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 4px;
+    background: #be4f45;
+}
+
+.j-comment-item{
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.j-content{
+    width: 100%;
+    margin-left: 10px;
+}
+
+.j-c-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.j-c-mid{
+    margin: 10px 0;
+}
+
+.j-c-bot{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.j-c-bot > a {
+    margin-left: 10px;
+}
+
+.j-reply-push{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.j-reply-text-wrap{
+    width: 100%;
+}
+
+.j-reply-text{
+    display: block;
+    padding: 3px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    resize: none;
+    border: 1px solid #ddd;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/*头像*******************************************************************************************************************/
+
+.j-head{
+    width: 40px;
+    height: 40px;
+}
+
+.j-head-sm {
+    display: inline-block;
+}
+
+.j-head-sm > img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    overflow: hidden;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
