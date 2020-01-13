@@ -990,6 +990,10 @@ nav.j-nav > ul > li > a {
     overflow-y: scroll;
 }
 
+.j-lyric-middle::-webkit-scrollbar {
+  width: 0;
+}
+
 .j-lyric-bottom {
     position: relative;
     margin: 0 auto;
