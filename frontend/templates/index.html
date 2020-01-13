@@ -114,8 +114,8 @@
     </div>
 
     <div class="j-middle-fixed">
-                 <div class="j-search-detail"></div>
-                </div>
+        <div class="j-search-detail"></div>
+    </div>
     <div class="j-middle">
         <div class="j-middle-wrap">
             <!--
@@ -572,33 +572,52 @@
             -->
             <div class="j-lyric">
                 <div class="j-lyric-top">
-                    <div class="j-lyric-vinyl">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 100 125">
-                            <g data-name="图层1">
-                                <circle cx="50" cy="62" r="45"></circle>
-                                <circle cx="50" cy="62" r="25" class="cls-1"></circle>
-                                <circle cx="50" cy="62" r="5" class="cls-2"></circle>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="j-lyric-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 600">
-                            <g data-name="图层1" transform="rotate(0,50 55)">
-                                <circle class="cls-4" cx="50" cy="55" r="40"/>
-                                <path d="M 52,300 H 48 L 44,30 a 6 6 0 0 1 6 -6 h 0 a 6 6 0 0 1 6 6 L56,30L52,300Z"
-                                      class="cls-4"></path>
 
-                                <rect x="38" y="300" width="24" height="40" rx="12" class="cls-4"></rect>
-                                <circle class="cls-5" cx="50" cy="55" r="20"/>
-                                <circle class="cls-6" cx="50" cy="55" r="6"/>
+                    <div class="j-lyric-vinyl">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+                            <defs>
+                                <pattern id="avatar" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                                    <image
+                                       width="1" height="1"
+                                       xlink:href="../static/images/back_06.jpg"/>
+                                </pattern>
+                                <style>
+                                    circle, rect {
+                                        stroke: #ff9900;
+                                        stroke-width: 5px;
+                                    }
+                                </style>
+                            </defs>
+                            <g data-name="图层1">
+                                <circle cx="400" cy="300" r="260"></circle>
+                                <circle cx="400" cy="300" r="130" fill="url(#avatar)"></circle>
+                                <circle cx="400" cy="300" r="20" class="cls-2"></circle>
+
+                            </g>
+                            <g data-name="图层2" transform="rotate(30,740 70) translate(0 10)">
+                                <circle cx="740" cy="60" r="40" class="cls-4"></circle>
+                                <path d="M 742,300 H 738 L 734,30 a 6 6 0 0 1 6 -6 h 0 a 6 6 0 0 1 6 6 L746,30L742,300Z"
+                                      class="cls-4"></path>
+                                <rect x="728" y="300" width="24" height="40" rx="12" class="cls-4"></rect>
+                                <!--
+                                <path class="cls-4" d="M699,300h-4l41.675-89.411L734,30c0-3.314,2.686-6,6-6l0,0c3.314,0,6,2.686,6,6l0,0l-2.762,186.439L699,300z"/>
+                                <path class="cls-4" d="M701.164,290.801L701.164,290.801c6.031,2.748,8.692,9.865,5.944,15.896l-6.635,14.56
+		c-2.748,6.031-9.865,8.692-15.896,5.944l0,0c-6.031-2.748-8.692-9.865-5.944-15.896l6.635-14.56
+		C688.017,290.713,695.134,288.052,701.164,290.801z"/>
+                                -->
+
+                                <circle cx="740" cy="60" r="20" class="cls-5"></circle>
+                                <circle cx="740" cy="60" r="6" class="cls-6"></circle>
                             </g>
                         </svg>
                     </div>
+                    <!--
                     <div class="j-cover">
                         <div class="j-cover-mx">
                             <img src="../static/images/back_06.jpg" alt="">
                         </div>
                     </div>
+                    -->
                 </div>
                 <div class="j-lyric-middle">
 
