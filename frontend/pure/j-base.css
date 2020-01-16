@@ -312,6 +312,8 @@ body {
     height: calc(100% - 180px);
     top: 0;
     left: 0;
+    overflow: hidden;
+    background-color: #fff;
 
 
 }
@@ -329,10 +331,8 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    /*top: calc(-100%);*/
 
-    background-color: #fff;
 }
 
 .j-list {
