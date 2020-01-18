@@ -113,7 +113,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 /*页面整体布局************************************************************************************************************/
 
 @media screen and (max-width: 600px) {
-    .j-middle {
+    .j-middle-wrap {
         background-color: red;
     }
 
@@ -305,7 +305,7 @@ body {
 
 }
 
-.j-middle {
+.j-middle-wrap {
 
     position: relative;
     width: 100%;
@@ -318,9 +318,8 @@ body {
 
 }
 
-.j-middle-wrap {
+.j-middle {
     display: flex;
-    align-items: center;
     position: relative;
     width: inherit;
     height: 100%;
@@ -335,9 +334,17 @@ body {
 
 }
 
-.j-list {
+.j-list-wrap {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 0 10px;
     box-sizing: border-box;
+}
+
+.j-list {
+    width: calc(100% + 5px);
+
 }
 
 .j-table {
@@ -985,7 +992,7 @@ nav.j-nav > ul > li > a {
 }
 
 .j-lyric-middle::-webkit-scrollbar {
-  width: 0;
+    width: 0;
 }
 
 .j-lyric-bottom {
@@ -1063,7 +1070,7 @@ nav.j-nav > ul > li > a {
 .j-comment {
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     padding: 0 10px;
     box-sizing: border-box;
@@ -1102,10 +1109,6 @@ nav.j-nav > ul > li > a {
 }
 
 .j-btn-emotion {
-    font-size: 0;
-}
-
-.j-btn-emotion {
     color: #ddd;
     font-size: 0;
     cursor: pointer;
@@ -1133,6 +1136,7 @@ nav.j-nav > ul > li > a {
 }
 
 .j-comment-list {
+    width: calc(100% + 5px);
     box-sizing: border-box;
 }
 
@@ -1188,8 +1192,8 @@ j-comment-item:first-child {
     justify-content: space-between;
 }
 
-.j-c-bot-l{
-    color:#aaa;
+.j-c-bot-l {
+    color: #aaa;
 }
 
 .j-c-bot-r > a {
@@ -1238,17 +1242,17 @@ j-comment-item:first-child {
     box-sizing: border-box;
 }
 
-.j-btn-send{
+.j-btn-send {
     margin-left: 10px;
     color: #aaa;
     cursor: pointer;
 }
 
-.j-btn-send:hover{
+.j-btn-send:hover {
     color: #000;
 }
 
-.j-middle-fixed{
+.j-middle-fixed {
     position: fixed;
     width: 100%;
     display: none;
@@ -1258,7 +1262,7 @@ j-comment-item:first-child {
     z-index: 1000;
 }
 
-.j-search-detail{
+.j-search-detail {
     position: absolute;
     right: 0;
     width: 294px;
