@@ -434,8 +434,9 @@ body {
     background-color: #ffffff;
 }
 
+
 .j-fun-group{
-    display: inline-block;
+    display: none;
     position: absolute;
     right: 10px;
 
@@ -445,6 +446,14 @@ body {
     margin-left: 10px;
     font-size: 0;
     color: #C65146;
+}
+
+.j-tr:hover{
+    background-color: #eee1e1;
+}
+
+.j-tr:hover .j-fun-group{
+    display: inline-block;
 }
 
 /*备用*/
