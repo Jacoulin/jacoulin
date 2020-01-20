@@ -324,6 +324,7 @@ body {
 
 .j-middle {
     display: flex;
+    flex-direction: column;
     position: relative;
     width: inherit;
     height: 100%;
@@ -336,6 +337,41 @@ body {
 
     /*top: calc(-100%);*/
 
+}
+
+.j-card-wrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: calc(100% + 5px);
+    padding: 10px 0;
+}
+
+.j-card-main{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+}
+
+.j-card-bottom{
+    position: absolute;
+    bottom: 20px;
+    width: 200px;
+    height: 10px;
+    background-color: #ddd;
+    z-index: 3;
+}
+
+
+.j-card-tab{
+    position: absolute;
+    width: 40%;
+    height: 200px;
+    flex-shrink: 0;
 }
 
 .j-list-wrap {
@@ -356,7 +392,10 @@ body {
 }
 
 .j-table-head{
-
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 
@@ -374,6 +413,7 @@ body {
     display: flex;
     position: relative;
     align-items: center;
+    padding: 0 10px;
 }
 
 .j-tw-10 {
@@ -423,7 +463,8 @@ body {
 }
 
 .j-tr-head {
-    background-color: #f9f9f9;
+    background-color: #c65146;
+    color: #fff;
 }
 
 .j-tr-gray {
