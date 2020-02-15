@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../pure/j-base.css">
     <link href="https://at.alicdn.com/t/font_221354_emflqrakw2.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/4.7.95/css/materialdesignicons.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 
 
 </head>
@@ -21,7 +23,7 @@
 
     <audio id="audio" ref="j-audio" @loadedmetadata="getDuration()" @timeupdate="getCurrentTime()">
         <!--source src="陈粒+-+小半.mp3" type="audio/mpeg" codecs="mp3"></source-->
-        <source src="https://ip-h5-re01-sycdn.kuwo.cn/1c8f51abf800203963f59ee845d0665a/5e11a71b/resource/n3/69/83/2754212257.mp3"
+        <source src="https://ee-sycdn.kuwo.cn/ef17c678d24a4bb1e14d0ded4e74ee18/5e47787a/resource/n1/64/17/332703764.mp3"
                 type="audio/mpeg" codecs="mp3"></source>
     </audio>
 
@@ -29,7 +31,7 @@
 
         <div class="j-top-wrap">
             <nav class="j-nav">
-                <a href="#" class="j-logo">
+                <a href="#" class="j-btn j-logo">
                     <!-- i class="mdi mdi-shape-plus mdi-24px"></i -->
                     <i class="mdi mdi-view-headline mdi-24px"></i>
                 </a>
@@ -37,18 +39,14 @@
 
                 <ul>
                     <li class="j-search-group">
-                        <div class="j-btn-search">
-                            <a>
-                                <i class="mdi mdi-magnify mdi-24px"></i>
-                            </a>
-                        </div>
+                        <a class="j-btn j-btn-s j-btn-search">
+                            <i class="mdi mdi-magnify mdi-18px"></i>
+                        </a>
                         <label for="j-search"></label>
-                        <input id="j-search" class="j-search" placeholder="请输入内容" left/>
-                        <div class="j-btn-clear">
-                            <a>
-                                <i class="mdi mdi-close mdi-24px"></i>
-                            </a>
-                        </div>
+                        <input id="j-search" class="j-search" ref="j-search" placeholder="请输入内容" @focus="searchFocus" @blur="searchBlur"/>
+                        <a class="j-btn j-btn-s j-btn-clear">
+                            <i class="mdi mdi-close mdi-18px"></i>
+                        </a>
                         <div style="
                         /* width: 517px; */
 
@@ -69,7 +67,7 @@
 
                     <li>
                         <div class="j-btn-playing">
-                            <a href="index.html">
+                            <a href="index.html" class="j-btn">
                                 <i class="mdi mdi-poll mdi-24px"></i>
                             </a>
                         </div>
@@ -113,492 +111,165 @@
 
     </div>
 
-    <div class="j-middle-fixed">
-        <div class="j-search-detail"></div>
+    <!--
+
+    <div class="j-message-bar">
+        <a href="#" class="j-message-btn">
+            <i class="mdi mdi-email-outline mdi-18px"></i>
+        </a>
+        <div class="j-message-text">随机电台</div>
+        <a href="#" class="j-message-close">
+            <i class="mdi mdi-close mdi-18px"></i>
+        </a>
     </div>
+
+    -->
+
+
+    <div class="j-message-bar" ref="j-message-bar">
+        <a href="#" class="j-btn j-btn-s j-message-btn">
+            <i class="mdi mdi-volume-high mdi-18px"
+               :class="{'mdi-volume-mute': volume==0, 'mdi-volume-low':volume>0 && volume<=3,'mdi-volume-medium': volume>3 && volume<=7, 'mdi-volume-high': volume>7}"></i>
+        </a>
+        <div class="j-volume-bar" ref="j-volume-bar" @mouseover="adjustVolume">
+            <!--
+            <div class="j-volume">
+                <div class="j-volume-drag"></div>
+            </div>
+            -->
+            <div class="j-volume" seq="0"></div>
+            <div class="j-volume" seq="1"></div>
+            <div class="j-volume" seq="2"></div>
+            <div class="j-volume" seq="3"></div>
+            <div class="j-volume" seq="4"></div>
+            <div class="j-volume" seq="5"></div>
+            <div class="j-volume" seq="6"></div>
+            <div class="j-volume" seq="7"></div>
+            <div class="j-volume" seq="8"></div>
+            <div class="j-volume" seq="9"></div>
+
+        </div>
+        <a href="#" class="j-btn j-btn-s j-volume-close" @click="messageHide">
+            <i class="mdi mdi-close mdi-18px"></i>
+        </a>
+    </div>
+
+
+    <div class="j-right" ref="j-right" @mouseover="rightIn" over="false" @mouseout="rightOut">
+        <div class="j-search-list j-search-list-dos">
+            <div class="j-title-line">
+                <span class="j-title">
+                    <a href="#" class="j-btn-search-singer">
+                        <i class="mdi mdi-account-circle mdi-16px"></i>
+                        <span>歌手</span>
+                    </a>
+
+                </span>
+            </div>
+            <div class="j-search-items">
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+            </div>
+        </div>
+        <div class="j-search-list j-search-list-dos">
+            <div class="j-title-line">
+                <span class="j-title">
+                    <a href="#" class="j-btn-search-singer">
+                        <i class="mdi mdi-music-circle mdi-16px"></i>
+                        <span>单曲</span>
+                    </a>
+
+                </span>
+            </div>
+            <div class="j-search-items">
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+            </div>
+        </div>
+        <div class="j-search-list j-search-list-dos">
+            <div class="j-title-line">
+                <span class="j-title">
+                    <a href="#" class="j-btn-search-singer">
+                        <i class="mdi mdi-disc mdi-16px"></i>
+                        <span>专辑</span>
+                    </a>
+
+                </span>
+            </div>
+            <div class="j-search-items">
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+                <a class="j-search-item">dfdfdf</a>
+            </div>
+        </div>
+    </div>
+
     <div class="j-middle-wrap">
         <div class="j-middle">
-            <!--
-            <img src="../static/images/back_02.jpg"/>
-            -->
 
             <div class="j-list-wrap">
-                <div class="j-card-wrap">
-                    <div class="j-card-main">
-                        <div seq="1" class="j-card-tab"
-                             style="background: red;transform: translate(-60%, 0) scale(0.8);z-index: 1;"></div>
-                        <div seq="2" class="j-card-tab" style="background: green;z-index: 2;"></div>
-                        <div seq="3" class="j-card-tab"
-                             style="background: blue;z-index: 1;transform: translate(60%, 0) scale(0.8);"></div>
-                    </div>
+
+                <!--
+
+                <div class="j-card-wrap" ref="j-card-wrap">
+                    <transition-group name="cardList" tag="div" class="j-card-main">
+
+                        <div v-for="(item, index) in cardList" :key="index" :seq="index" @click="toggle"
+                             class="j-card-tab"
+                             :class="{'j-card-tab-b':index<current-1 || index>current+1, 'j-card-tab-l': current==0 ? index==cardList.length -1 : index==current-1, 'j-card-tab-c':index==current, 'j-card-tab-r': current+1==cardList.length ? index==0 : index==current+1}"
+                        ></div>
+
+                    </transition-group>
+
                     <div class="j-card-left"></div>
-                    <div class="j-card-bottom"></div>
+                    <div class="j-card-bottom">
+                        <div v-for="(item, index) in cardList" :seq="index" @click="toggle" class="j-btn-toggle"
+                             :actived="index==current">
+                        </div>
+                    </div>
                     <div class="j-card-right"></div>
                 </div>
-                <div class="j-list">
-                    <div class="j-table j-table-rank">
-                        <div class="j-table-head">
-                            <div class="j-tr-head">
-                                <div class="j-tw j-tw-10">
-                                    序号
-                                </div>
-                                <div class="j-tw j-tw-70">
-                                    标题
-                                </div>
-                                <div class="j-tw j-tw-10">
-                                    时长
-                                </div>
-                                <div class="j-tw j-tw-10">
-                                    歌手
-                                </div>
-                            </div>
-                        </div>
-                        <div class="j-table-body">
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    1
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                    <div class="j-fun-group">
-                                        <a href="#">
-                                            <i class="mdi mdi-play mdi-18px"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="mdi mdi-plus mdi-18px"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="mdi mdi-heart-outline mdi-18px"></i>
-                                        </a>
 
-                                    </div>
-
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    2
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                    <div class="j-fun-group">
-                                        <a href="#">
-                                            <i class="mdi mdi-play mdi-18px"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="mdi mdi-plus mdi-18px"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="mdi mdi-heart-outline mdi-18px"></i>
-                                        </a>
-
-                                    </div>
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    3
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    4
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    5
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    6
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    7
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    8
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-gray">
-                                <div class="j-tw-10">
-                                    10
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-                            <div class="j-tr j-tr-white">
-                                <div class="j-tw-10">
-                                    9
-                                </div>
-                                <div class="j-tw-70">
-                                    灰姑娘
-                                </div>
-                                <div class="j-tw-10">
-                                    04:53
-                                </div>
-                                <div class="j-tw-10">
-                                    陈雪凝
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
+                <div class="j-entry-bar">
+                    <a class="j-entry-fm">
+                        <i class="mdi mdi-radio mdi-24px"></i>
+                        <span>随机电台</span>
+                    </a>
+                    <a class="j-entry-my">
+                        <i class="mdi mdi-view-list mdi-24px"></i>
+                        <span>我的音乐</span>
+                    </a>
+                    <a class="j-entry-rl">
+                        <i class="mdi mdi-clipboard-text mdi-24px"></i>
+                        <span>歌单排行</span>
+                    </a>
                 </div>
+
+
+                <j-recommend-list-pop v-bind:posts="posts"></j-recommend-list-pop>
+
+                -->
+
+                <j-list v-bind:dosls="dosls"></j-list>
+
             </div>
 
-            <!--
+
+        </div>
+        <div class="j-middle-sec" style="top: -100%;">
             <div class="j-lyric">
                 <div class="j-lyric-top">
 
                     <div class="j-lyric-vinyl">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
                             <defs>
                                 <pattern id="avatar" width="100%" height="100%" patternContentUnits="objectBoundingBox">
                                     <image
@@ -613,9 +284,9 @@
                                 </style>
                             </defs>
                             <g data-name="图层1">
-                                <circle cx="400" cy="300" r="230"></circle>
-                                <circle cx="400" cy="300" r="130" fill="url(#avatar)"></circle>
-                                <circle cx="400" cy="300" r="12" class="cls-2"></circle>
+                                <circle cx="400" cy="400" r="330"></circle>
+                                <circle cx="400" cy="400" r="200" fill="url(#avatar)"></circle>
+                                <circle cx="400" cy="400" r="20" class="cls-2"></circle>
 
                             </g>
                             <g data-name="图层2" transform="rotate(40,740 100) translate(0 40)">
@@ -632,97 +303,103 @@
                 </div>
                 <div class="j-lyric-middle">
 
-                    <p>小半</p>
-                    <p>歌手：陈粒</p>
-                    <p>作曲：陈粒</p>
-                    <p>作词：涂玲子</p>
-                    <p>不敢回看，左顾右盼不自然的暗自喜欢</p>
-                    <p>偷偷搭讪总没完地坐立难安，试探说晚安</p>
-                    <p>多空泛又心酸，低头呢喃</p>
-                    <p>对你的偏爱太过于明目张胆，在原地打转的小丑伤心不断</p>
-                    <p>空空留遗憾，多难堪又为难</p>
-                    <p>释然，慵懒</p>
-                    <p>尽欢，时间风干后你与我再无关</p>
-                    <p>没答案，怎么办</p>
-                    <p>看不惯自我欺瞒，纵容着</p>
-                    <p>喜欢的，讨厌的</p>
-                    <p>宠溺的，厌倦的</p>
-                    <p>一个个慢慢黯淡，纵容着</p>
-                    <p>任性的，随意的</p>
-                    <p>放肆的，轻易的</p>
-                    <p>将所有欢脱倾翻，不应该</p>
-                    <p>太心软，不大胆</p>
-                    <p>太死板，不果断</p>
-                    <p>玩弄着肆无忌惮，不应该</p>
-                    <p>舍弃了，死心了</p>
-                    <p>放手了，断念了</p>
-                    <p>无可奈何不耐烦，不算</p>
-                    <p>灯火阑珊，我的心借了你的光是明是暗</p>
-                    <p>笑自己情绪太泛滥形只影单，自嘲成习惯</p>
-                    <p>多敏感又难缠，低头呢喃</p>
-                    <p>对你的偏爱太过于明目张胆，在原地打转的小丑伤心不断</p>
-                    <p>空空留遗憾，多难堪又为难</p>
-                    <p>释然，慵懒</p>
-                    <p>尽欢，时间风干后你与我再无关</p>
-                    <p>没答案，怎么办</p>
-                    <p>看不惯自我欺瞒，纵容着</p>
-                    <p>喜欢的，讨厌的</p>
-                    <p>宠溺的，厌倦的</p>
-                    <p>一个个慢慢黯淡，纵容着</p>
-                    <p>任性的，随意的</p>
-                    <p>放肆的，轻易的</p>
-                    <p>将所有欢脱倾翻，不应该</p>
-                    <p>太心软，不大胆</p>
-                    <p>太死板，不果断</p>
-                    <p>玩弄着肆无忌惮，不应该</p>
-                    <p>舍弃了，死心了</p>
-                    <p>放手了，断念了</p>
-                    <p>无可奈何不耐烦，任由着</p>
-                    <p>你躲闪，我追赶</p>
-                    <p>你走散，我呼喊</p>
-                    <p>是谁在泛泛而谈，任由着</p>
-                    <p>你来了，你笑了</p>
-                    <p>你走了，不看我</p>
-                    <p>与理所当然分摊，不明白</p>
-                    <p>残存的，没用的</p>
-                    <p>多余的，不必的</p>
-                    <p>破烂也在手紧攥，不明白</p>
-                    <p>谁赧然，谁无端</p>
-                    <p>谁古板，谁极端</p>
-                    <p>无辜不知所以然，纵容着</p>
-                    <p>喜欢的，讨厌的</p>
-                    <p>宠溺的，厌倦的（不管）</p>
-                    <p>一个个慢慢黯淡，纵容着</p>
-                    <p>任性的，随意的</p>
-                    <p>放肆的，轻易的</p>
-                    <p>将所有欢脱倾翻，不应该</p>
-                    <p>太心软，不大胆</p>
-                    <p>太死板，不果断</p>
-                    <p>玩弄着肆无忌惮，不应该</p>
-                    <p>舍弃了，死心了</p>
-                    <p>放手了，断念了，无可奈何不耐烦</p>
+                    <div class="j-lyric-title">小半 - 陈粒</div>
+                    <div class="j-lyric-content">
+                        <p style="background-color: #f8f8f8">小半</p>
+                        <p>歌手：陈粒</p>
+                        <p>作曲：陈粒</p>
+                        <p>作词：涂玲子</p>
+                        <p>不敢回看，左顾右盼不自然的暗自喜欢</p>
+                        <p>偷偷搭讪总没完地坐立难安，试探说晚安</p>
+                        <p>多空泛又心酸，低头呢喃</p>
+                        <p>对你的偏爱太过于明目张胆，在原地打转的小丑伤心不断</p>
+                        <p>空空留遗憾，多难堪又为难</p>
+                        <p>释然，慵懒</p>
+                        <p>尽欢，时间风干后你与我再无关</p>
+                        <p>没答案，怎么办</p>
+                        <p>看不惯自我欺瞒，纵容着</p>
+                        <p>喜欢的，讨厌的</p>
+                        <p>宠溺的，厌倦的</p>
+                        <p>一个个慢慢黯淡，纵容着</p>
+                        <p>任性的，随意的</p>
+                        <p>放肆的，轻易的</p>
+                        <p>将所有欢脱倾翻，不应该</p>
+                        <p>太心软，不大胆</p>
+                        <p>太死板，不果断</p>
+                        <p>玩弄着肆无忌惮，不应该</p>
+                        <p>舍弃了，死心了</p>
+                        <p>放手了，断念了</p>
+                        <p>无可奈何不耐烦，不算</p>
+                        <p>灯火阑珊，我的心借了你的光是明是暗</p>
+                        <p>笑自己情绪太泛滥形只影单，自嘲成习惯</p>
+                        <p>多敏感又难缠，低头呢喃</p>
+                        <p>对你的偏爱太过于明目张胆，在原地打转的小丑伤心不断</p>
+                        <p>空空留遗憾，多难堪又为难</p>
+                        <p>释然，慵懒</p>
+                        <p>尽欢，时间风干后你与我再无关</p>
+                        <p>没答案，怎么办</p>
+                        <p>看不惯自我欺瞒，纵容着</p>
+                        <p>喜欢的，讨厌的</p>
+                        <p>宠溺的，厌倦的</p>
+                        <p>一个个慢慢黯淡，纵容着</p>
+                        <p>任性的，随意的</p>
+                        <p>放肆的，轻易的</p>
+                        <p>将所有欢脱倾翻，不应该</p>
+                        <p>太心软，不大胆</p>
+                        <p>太死板，不果断</p>
+                        <p>玩弄着肆无忌惮，不应该</p>
+                        <p>舍弃了，死心了</p>
+                        <p>放手了，断念了</p>
+                        <p>无可奈何不耐烦，任由着</p>
+                        <p>你躲闪，我追赶</p>
+                        <p>你走散，我呼喊</p>
+                        <p>是谁在泛泛而谈，任由着</p>
+                        <p>你来了，你笑了</p>
+                        <p>你走了，不看我</p>
+                        <p>与理所当然分摊，不明白</p>
+                        <p>残存的，没用的</p>
+                        <p>多余的，不必的</p>
+                        <p>破烂也在手紧攥，不明白</p>
+                        <p>谁赧然，谁无端</p>
+                        <p>谁古板，谁极端</p>
+                        <p>无辜不知所以然，纵容着</p>
+                        <p>喜欢的，讨厌的</p>
+                        <p>宠溺的，厌倦的（不管）</p>
+                        <p>一个个慢慢黯淡，纵容着</p>
+                        <p>任性的，随意的</p>
+                        <p>放肆的，轻易的</p>
+                        <p>将所有欢脱倾翻，不应该</p>
+                        <p>太心软，不大胆</p>
+                        <p>太死板，不果断</p>
+                        <p>玩弄着肆无忌惮，不应该</p>
+                        <p>舍弃了，死心了</p>
+                        <p>放手了，断念了，无可奈何不耐烦</p>
+                    </div>
+
+                    div.j-lyric-
+
                 </div>
                 <div class="j-lyric-bottom">
                     <div class="j-lyric-bottom-center">
                         <div>
-                            <a>
+                            <a class="j-btn" actived="true">
                                 <i class="mdi mdi-heart-outline mdi-18px"></i>
                             </a>
                         </div>
                         <div>
-                            <a>
+                            <a class="j-btn" actived="true">
                                 <i class="mdi mdi-plus mdi-18px"></i>
                             </a>
                         </div>
                         <div>
-                            <a>
+                            <a class="j-btn" actived="true">
                                 <i class="mdi mdi-share-variant mdi-18px"></i>
                             </a>
                         </div>
                     </div>
                     <div class="j-lyric-bottom-right">
                         <div>
-                            <a>
+                            <a class="j-btn" actived="true">
                                 <i class="mdi mdi-message-text-outline mdi-18px"></i>
                             </a>
                         </div>
@@ -1114,7 +791,6 @@
                     </div>
                 </div>
             </div>
-            -->
         </div>
     </div>
 
@@ -1145,50 +821,40 @@
                 </div>
                 <div id="j-control-wrap">
                     <div id="next">
-                        <a>
+                        <a class="j-btn" actived="true">
                             <i class="mdi mdi-skip-previous mdi-24px"></i>
                         </a>
                     </div>
                     <div id="play" @click="play()">
-                        <a>
+                        <a class="j-btn j-btn-l" actived="true">
                             <!-- <i class="mdi mdi-play mdi-48px"></i> -->
                             <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
                         </a>
                     </div>
                     <div id="next">
-                        <a>
+                        <a class="j-btn" actived="true">
                             <i class="mdi mdi-skip-next mdi-24px"></i>
                         </a>
                     </div>
                 </div>
                 <div id="j-control-wrap-right">
-                    <div>
-                        <a class="j-active">
-                            <i class="mdi mdi-volume-medium mdi-24px"></i>
-                        </a>
-                    </div>
+                    <a href="#" class="j-btn" actived="true" @click="messageShow">
+                        <i class="mdi mdi-volume-medium mdi-24px"></i>
+                    </a>
                     <!--
-                    <div>
-                        <a class="j-active">
+                        <a class="j-btn" actived="true">
                             <i class="mdi mdi-resistor mdi-24px"></i>
                         </a>
-                    </div>
                     -->
-                    <div>
-                        <a class="j-active">
-                            <i class="mdi mdi-tumblr-reblog mdi-24px"></i>
-                        </a>
-                    </div>
-                    <div>
-                        <a class="j-active">
-                            <i class="mdi mdi-playlist-music-outline mdi-24px"></i>
-                        </a>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="mdi mdi-file-document-box-outline mdi-24px"></i>
-                        </a>
-                    </div>
+                    <a class="j-btn" actived="true">
+                        <i class="mdi mdi-tumblr-reblog mdi-24px"></i>
+                    </a>
+                    <a class="j-btn" actived="true">
+                        <i class="mdi mdi-playlist-music-outline mdi-24px"></i>
+                    </a>
+                    <a class="j-btn" actived="false">
+                        <i class="mdi mdi-file-document-box-outline mdi-24px"></i>
+                    </a>
                 </div>
             </div>
         </div>
