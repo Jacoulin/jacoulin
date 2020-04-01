@@ -23,7 +23,7 @@
 
     <audio id="audio" ref="j-audio" @loadedmetadata="getDuration()" @timeupdate="getCurrentTime()">
         <!--source src="陈粒+-+小半.mp3" type="audio/mpeg" codecs="mp3"></source-->
-        <source src="https://ee-sycdn.kuwo.cn/ef17c678d24a4bb1e14d0ded4e74ee18/5e47787a/resource/n1/64/17/332703764.mp3"
+        <source src="https://ip-h5-rh01-sycdn.kuwo.cn/20e3ffc826c9394811bc33b4dfbecfa7/5e660e49/resource/n1/60/68/1671896015.mp3"
                 type="audio/mpeg" codecs="mp3"></source>
     </audio>
 
@@ -31,49 +31,53 @@
 
         <div class="j-top-wrap">
             <nav class="j-nav">
-                <a href="#" class="j-btn j-logo">
-                    <!-- i class="mdi mdi-shape-plus mdi-24px"></i -->
-                    <i class="mdi mdi-view-headline mdi-24px"></i>
-                </a>
+
+                <div class="j-nav-left">
+
+                    <a @click="toSec = !toSec" class="j-btn" actived="true"><i class="mdi mdi-24px"
+                                                                               :class="{'mdi-chevron-up': !toSec, 'mdi-chevron-down': toSec}"></i></a>
+                    <a class="j-dos-title" @click="toSec = !toSec">
+                        小半-陈粒
+                    </a>
+
+                </div>
+
+                <div class="j-nav-middle">
 
 
-                <ul>
-                    <li class="j-search-group">
-                        <a class="j-btn j-btn-s j-btn-search">
-                            <i class="mdi mdi-magnify mdi-18px"></i>
+                </div>
+
+
+                <div class="j-nav-right">
+
+                    <div class="j-btn-show-list" ref="j-dos-list" @click="right">
+                        <a class="j-btn">
+
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                 height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;"
+                                 xml:space="preserve" transform="rotate(180)">
+                                    <rect x="3" y="0" width="3" height="7" fill="#C65146" transform="scale(1 1.71418)">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale"
+                                                          values="1,1; 1,3; 1,1" begin="0s" dur="0.6s"
+                                                          repeatCount="indefinite"></animateTransform>
+                                    </rect>
+                                <rect x="10" y="0" width="3" height="7" fill="#C65146" transform="scale(1 1.61915)">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale"
+                                                          values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s"
+                                                          repeatCount="indefinite"></animateTransform>
+                                    </rect>
+                                <rect x="18" y="0" width="3" height="7" fill="#C65146" transform="scale(1 2.95249)">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale"
+                                                          values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s"
+                                                          repeatCount="indefinite"></animateTransform>
+                                    </rect>
+                                </svg>
                         </a>
-                        <label for="j-search"></label>
-                        <input id="j-search" class="j-search" ref="j-search" placeholder="请输入内容" @focus="searchFocus" @blur="searchBlur"/>
-                        <a class="j-btn j-btn-s j-btn-clear">
-                            <i class="mdi mdi-close mdi-18px"></i>
-                        </a>
-                        <div style="
-                        /* width: 517px; */
 
-                        height: 100px;
-                        display: none;
-                        /* left: -39px; */
-                        border: 1px solid;
-                        box-shadow: azure;
-                        /* border-top: none; */
-                        box-sizing: border-box;
-                        position: relative;
-                        clear: both;
-                        top: 10px;
-                        background: #fff;
-                    ">{{ result }}</div>
-                    </li>
+                    </div>
 
-
-                    <li>
-                        <div class="j-btn-playing">
-                            <a href="index.html" class="j-btn">
-                                <i class="mdi mdi-poll mdi-24px"></i>
-                            </a>
-                        </div>
-                    </li>
-
-                </ul>
+                </div>
 
             </nav>
             <!--
@@ -125,150 +129,133 @@
 
     -->
 
+    <div class="j-right" ref="j-right" @mouseover="rightIn" to="false" o="false" over="false" @mouseout="rightOut">
+        <!--
 
-    <div class="j-message-bar" ref="j-message-bar">
-        <a href="#" class="j-btn j-btn-s j-message-btn">
-            <i class="mdi mdi-volume-high mdi-18px"
-               :class="{'mdi-volume-mute': volume==0, 'mdi-volume-low':volume>0 && volume<=3,'mdi-volume-medium': volume>3 && volume<=7, 'mdi-volume-high': volume>7}"></i>
-        </a>
-        <div class="j-volume-bar" ref="j-volume-bar" @mouseover="adjustVolume">
+        <div class="j-top">
+            <div class="j-top-wrap" style="padding-right: 15px">
+                <div class="j-search-group">
+                    <label for="j-search"></label>
+                    <input id="j-search" class="j-search" ref="j-search" placeholder="请输入内容" @focus=""
+                           @blur=""/>
+                    <a class="j-btn-search" actived="true">
+                        <i class="mdi mdi-magnify mdi-18px"></i>
+                    </a>
+                    <a class="j-btn-clear" actived="true">
+                        <i class="mdi mdi-close-circle mdi-18px"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        -->
+
+        <div class="j-dos-list-wrap">
+
+            <div class="j-btn-icon">
+                <a class="j-btn-full j-btn-icon-l">
+                    <span class="j-icon j-icon-s" actived="true">
+                        <i class="mdi mdi-playlist-music mdi-16px"></i>
+                    </span>
+                    <span>播放歌单</span>
+                </a>
+                <a class="j-btn j-btn-s j-btn-icon-r">
+                    <i class="mdi mdi-delete-outline mdi-16px"></i>
+                </a>
+
+            </div>
+
+
+            <j-dos-list v-bind:dosls="dosls"></j-dos-list>
+
+        </div>
+        <div class="j-bottom">
+            <div class="j-bottom-wrap" style="padding-right: 15px">
+
+
+                <div class="j-btn-icon">
+                    <a class="j-btn-full j-btn-icon-l">
+                         <span class="j-icon j-icon-s" actived="true">
+                            <i class="mdi mdi-16px mdi-play"></i>
+                         </span>
+                        <span>小半-陈粒</span>
+                    </a>
+                    <a class="j-btn j-btn-s j-btn-icon-r">
+                        <i class="mdi mdi-tumblr-reblog mdi-16px"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="j-middle">
+        <div class="j-middle-one">
             <!--
-            <div class="j-volume">
-                <div class="j-volume-drag"></div>
+            <div class="j-middle-left">
+                <a href="#" class="j-btn" actived="true"><i class="mdi mdi-view-headline mdi-24px"></i></a>
             </div>
             -->
-            <div class="j-volume" seq="0"></div>
-            <div class="j-volume" seq="1"></div>
-            <div class="j-volume" seq="2"></div>
-            <div class="j-volume" seq="3"></div>
-            <div class="j-volume" seq="4"></div>
-            <div class="j-volume" seq="5"></div>
-            <div class="j-volume" seq="6"></div>
-            <div class="j-volume" seq="7"></div>
-            <div class="j-volume" seq="8"></div>
-            <div class="j-volume" seq="9"></div>
+            <div class="j-middle-wrap">
+                <div class="j-list-wrap">
 
-        </div>
-        <a href="#" class="j-btn j-btn-s j-volume-close" @click="messageHide">
-            <i class="mdi mdi-close mdi-18px"></i>
-        </a>
-    </div>
+                    <!--
 
+                    <div class="j-card-wrap" ref="j-card-wrap">
+                        <transition-group name="cardList" tag="div" class="j-card-main">
 
-    <div class="j-right" ref="j-right" @mouseover="rightIn" over="false" @mouseout="rightOut">
-        <div class="j-search-list j-search-list-dos">
-            <div class="j-title-line">
-                <span class="j-title">
-                    <a href="#" class="j-btn-search-singer">
-                        <i class="mdi mdi-account-circle mdi-16px"></i>
-                        <span>歌手</span>
-                    </a>
+                            <div v-for="(item, index) in cardList" :key="index" :seq="index" @click="toggle"
+                                 class="j-card-tab"
+                                 :class="{'j-card-tab-b':index<current-1 || index>current+1, 'j-card-tab-l': current==0 ? index==cardList.length -1 : index==current-1, 'j-card-tab-c':index==current, 'j-card-tab-r': current+1==cardList.length ? index==0 : index==current+1}"
+                            ></div>
 
-                </span>
-            </div>
-            <div class="j-search-items">
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-            </div>
-        </div>
-        <div class="j-search-list j-search-list-dos">
-            <div class="j-title-line">
-                <span class="j-title">
-                    <a href="#" class="j-btn-search-singer">
-                        <i class="mdi mdi-music-circle mdi-16px"></i>
-                        <span>单曲</span>
-                    </a>
+                        </transition-group>
 
-                </span>
-            </div>
-            <div class="j-search-items">
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-            </div>
-        </div>
-        <div class="j-search-list j-search-list-dos">
-            <div class="j-title-line">
-                <span class="j-title">
-                    <a href="#" class="j-btn-search-singer">
-                        <i class="mdi mdi-disc mdi-16px"></i>
-                        <span>专辑</span>
-                    </a>
-
-                </span>
-            </div>
-            <div class="j-search-items">
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-                <a class="j-search-item">dfdfdf</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="j-middle-wrap">
-        <div class="j-middle">
-
-            <div class="j-list-wrap">
-
-                <!--
-
-                <div class="j-card-wrap" ref="j-card-wrap">
-                    <transition-group name="cardList" tag="div" class="j-card-main">
-
-                        <div v-for="(item, index) in cardList" :key="index" :seq="index" @click="toggle"
-                             class="j-card-tab"
-                             :class="{'j-card-tab-b':index<current-1 || index>current+1, 'j-card-tab-l': current==0 ? index==cardList.length -1 : index==current-1, 'j-card-tab-c':index==current, 'j-card-tab-r': current+1==cardList.length ? index==0 : index==current+1}"
-                        ></div>
-
-                    </transition-group>
-
-                    <div class="j-card-left"></div>
-                    <div class="j-card-bottom">
-                        <div v-for="(item, index) in cardList" :seq="index" @click="toggle" class="j-btn-toggle"
-                             :actived="index==current">
+                        <div class="j-card-left"></div>
+                        <div class="j-card-bottom">
+                            <div v-for="(item, index) in cardList" :seq="index" @click="toggle" class="j-btn-toggle"
+                                 :actived="index==current">
+                            </div>
                         </div>
+                        <div class="j-card-right"></div>
                     </div>
-                    <div class="j-card-right"></div>
+
+                    <div class="j-entry-bar">
+                        <a class="j-entry-fm">
+                            <i class="mdi mdi-radio mdi-24px"></i>
+                            <span>随机电台</span>
+                        </a>
+                        <a class="j-entry-my">
+                            <i class="mdi mdi-view-list mdi-24px"></i>
+                            <span>我的音乐</span>
+                        </a>
+                        <a class="j-entry-rl">
+                            <i class="mdi mdi-clipboard-text mdi-24px"></i>
+                            <span>歌单排行</span>
+                        </a>
+                    </div>
+
+
+                    <j-recommend-list-pop v-bind:posts="posts"></j-recommend-list-pop>
+
+                    -->
+
+                    <j-list v-bind:dosls="dosls"></j-list>
+
                 </div>
-
-                <div class="j-entry-bar">
-                    <a class="j-entry-fm">
-                        <i class="mdi mdi-radio mdi-24px"></i>
-                        <span>随机电台</span>
-                    </a>
-                    <a class="j-entry-my">
-                        <i class="mdi mdi-view-list mdi-24px"></i>
-                        <span>我的音乐</span>
-                    </a>
-                    <a class="j-entry-rl">
-                        <i class="mdi mdi-clipboard-text mdi-24px"></i>
-                        <span>歌单排行</span>
-                    </a>
-                </div>
-
-
-                <j-recommend-list-pop v-bind:posts="posts"></j-recommend-list-pop>
-
-                -->
-
-                <j-list v-bind:dosls="dosls"></j-list>
 
             </div>
 
 
         </div>
-        <div class="j-middle-sec" style="top: -100%;">
+        <div class="j-middle-sec" :to="toSec">
             <div class="j-lyric">
                 <div class="j-lyric-top">
 
                     <div class="j-lyric-vinyl">
+                        <div class="j-lyric-vinyl-eff">
+
+                        </div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
                             <defs>
                                 <pattern id="avatar" width="100%" height="100%" patternContentUnits="objectBoundingBox">
@@ -276,36 +263,55 @@
                                             width="1" height="1"
                                             xlink:href="../static/images/back_06.jpg"/>
                                 </pattern>
-                                <style>
-                                    circle, rect {
-                                        stroke: #ff9900;
-                                        stroke-width: 5px;
-                                    }
-                                </style>
                             </defs>
                             <g data-name="图层1">
-                                <circle cx="400" cy="400" r="330"></circle>
-                                <circle cx="400" cy="400" r="200" fill="url(#avatar)"></circle>
-                                <circle cx="400" cy="400" r="20" class="cls-2"></circle>
-
-                            </g>
-                            <g data-name="图层2" transform="rotate(40,740 100) translate(0 40)">
-                                <circle cx="740" cy="60" r="40" class="cls-4"></circle>
-                                <path d="M 742,300 H 738 L 734,30 a 6 6 0 0 1 6 -6 h 0 a 6 6 0 0 1 6 6 L746,30L742,300Z"
-                                      class="cls-4"></path>
-                                <rect x="728" y="300" width="24" height="40" rx="12" class="cls-4"></rect>
-
-                                <circle cx="740" cy="60" r="20" class="cls-5"></circle>
-                                <circle cx="740" cy="60" r="6" class="cls-6"></circle>
+                                <rect width="800" height="800" fill="url(#avatar)"></rect>
                             </g>
                         </svg>
+
+                    </div>
+
+                </div>
+
+
+                <div id="j-control-wrap">
+                    <div id="next">
+                        <a class="j-btn" actived="true">
+                            <i class="mdi mdi-skip-previous mdi-24px"></i>
+                        </a>
+                    </div>
+                    <div id="play" @click="play()">
+                        <a class="j-btn j-btn-l" actived="true">
+                            <!-- <i class="mdi mdi-play mdi-48px"></i> -->
+                            <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
+                        </a>
+                    </div>
+                    <div id="next">
+                        <a class="j-btn" actived="true">
+                            <i class="mdi mdi-skip-next mdi-24px"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div class="j-lyric-middle">
 
-                    <div class="j-lyric-title">小半 - 陈粒</div>
-                    <div class="j-lyric-content">
-                        <p style="background-color: #f8f8f8">小半</p>
+                    <div class="j-lyric-control" style="display: none;">
+                        <a href="#" class="j-btn j-lyric-control-btn" actived="true">
+                            <i class="mdi mdi-play mdi-18px"></i>
+                        </a>
+                        <div class="j-lyric-control-line"></div>
+                        <div class="j-lyric-control-time">03:25</div>
+                    </div>
+                    <j-lyric-content v-bind:lrc-load="lrcLoad" v-bind:lrc-play="lrcPlay" v-on:print-top="printTop"
+                                     ref="j-lyric-content"></j-lyric-content>
+
+                    <!--
+
+                    <div class="j-lyric-content" ref="j-lyric-content" @mouseover="getLyric">
+
+
+
+                        <p>小半</p>
                         <p>歌手：陈粒</p>
                         <p>作曲：陈粒</p>
                         <p>作词：涂玲子</p>
@@ -374,421 +380,12 @@
                         <p>玩弄着肆无忌惮，不应该</p>
                         <p>舍弃了，死心了</p>
                         <p>放手了，断念了，无可奈何不耐烦</p>
+
+
                     </div>
 
-                    div.j-lyric-
+                    -->
 
-                </div>
-                <div class="j-lyric-bottom">
-                    <div class="j-lyric-bottom-center">
-                        <div>
-                            <a class="j-btn" actived="true">
-                                <i class="mdi mdi-heart-outline mdi-18px"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a class="j-btn" actived="true">
-                                <i class="mdi mdi-plus mdi-18px"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a class="j-btn" actived="true">
-                                <i class="mdi mdi-share-variant mdi-18px"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="j-lyric-bottom-right">
-                        <div>
-                            <a class="j-btn" actived="true">
-                                <i class="mdi mdi-message-text-outline mdi-18px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="j-comment-wrap">
-                <div class="j-comment-push">
-                    <div class="j-comment-text-wrap">
-                        <label for="j-comment-text"></label>
-                        <textarea id="j-comment-text" class="j-comment-text" rows="5"></textarea>
-                    </div>
-                    <div class="j-comment-bar">
-                        <div class="j-btn-emotion">
-                            <a>
-                                <i class="mdi mdi-emoticon mdi-18px"></i>
-                            </a>
-                        </div>
-                        <div class="j-btn-push">
-                            <a>
-                                评论
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="j-comment">
-
-                    <div class="j-comment-list">
-                        <div class="j-comment-list-pop">
-                            <div class="j-title-line">
-                                <span class="j-title">最热</span>
-                                <span class="j-line"></span>
-                            </div>
-                            <div class="j-comment-item">
-                                wwwwwwwwwwwwwwwwwwwwwwwwwwwww
-                            </div>
-                        </div>
-                        <div class="j-comment-list-all">
-                            <div class="j-title-line">
-                                <span class="j-title">全部</span>
-                                <span class="j-line"></span>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <div class="j-c-top-r">
-                                            <a class="j-btn-good">
-
-                                                <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: flex">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <span></span>
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="j-comment-item">
-                                <div class="j-head">
-                                    <a class="j-head-sm">
-                                        <img src="../static/images/cat.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="j-content">
-                                    <div class="j-c-top">
-                                        <span class="nickname">余一夏</span>
-                                        <a class="j-btn-good">
-                                            <i class="mdi mdi-thumb-up-outline mdi-16px"></i>
-                                        </a>
-
-                                    </div>
-                                    <div class="j-c-mid">
-                                        真好听
-                                    </div>
-                                    <div class="j-c-bot">
-                                        <div class="j-c-bot-l">
-                                            <span class="pushtime">2小时前</span>
-                                        </div>
-                                        <div class="j-c-bot-r">
-                                            <a class="reply">回复</a>
-                                        </div>
-                                    </div>
-                                    <div class="j-reply-push" style="display: none">
-                                        <div class="j-reply-text-wrap">
-                                            <label for="j-reply-text"></label>
-                                            <input id="j-reply-text" class="j-reply-text"/>
-                                            <div class="j-btn-send">
-                                                <a>
-                                                    <i class="mdi mdi-chevron-right mdi-24px"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -805,57 +402,6 @@
                     </div>
                 </div>
                 <div id="j-process-next">{{ duration }}</div>
-            </div>
-            <div id="j-control">
-                <div id="j-control-wrap-left">
-                    <div class="j-cover">
-                        <a class="j-cover-sm">
-                            <img src="../static/images/cat.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="j-playing">
-                        <div>小半</div>
-                        <div>陈粒</div>
-                    </div>
-
-                </div>
-                <div id="j-control-wrap">
-                    <div id="next">
-                        <a class="j-btn" actived="true">
-                            <i class="mdi mdi-skip-previous mdi-24px"></i>
-                        </a>
-                    </div>
-                    <div id="play" @click="play()">
-                        <a class="j-btn j-btn-l" actived="true">
-                            <!-- <i class="mdi mdi-play mdi-48px"></i> -->
-                            <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
-                        </a>
-                    </div>
-                    <div id="next">
-                        <a class="j-btn" actived="true">
-                            <i class="mdi mdi-skip-next mdi-24px"></i>
-                        </a>
-                    </div>
-                </div>
-                <div id="j-control-wrap-right">
-                    <a href="#" class="j-btn" actived="true" @click="messageShow">
-                        <i class="mdi mdi-volume-medium mdi-24px"></i>
-                    </a>
-                    <!--
-                        <a class="j-btn" actived="true">
-                            <i class="mdi mdi-resistor mdi-24px"></i>
-                        </a>
-                    -->
-                    <a class="j-btn" actived="true">
-                        <i class="mdi mdi-tumblr-reblog mdi-24px"></i>
-                    </a>
-                    <a class="j-btn" actived="true">
-                        <i class="mdi mdi-playlist-music-outline mdi-24px"></i>
-                    </a>
-                    <a class="j-btn" actived="false">
-                        <i class="mdi mdi-file-document-box-outline mdi-24px"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </div>

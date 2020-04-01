@@ -24,11 +24,11 @@ Vue.component('j-recommend-list-pop', {
 });
 
 Vue.component('todo-list', {
-    data: function() {
+    data: function () {
         return {}
     },
     props: ['todos'],
-    template:`
+    template: `
       <div class="todo-list">
         <p>已完成：{{todos.filter(todo => todo.done === true).length}}</p>
         <p>未完成：{{todos.filter(todo => todo.done === false).length}}</p>
@@ -44,11 +44,11 @@ Vue.component('todo-list', {
 
 
 Vue.component('j-table-page-bar', {
-    data: function() {
+    data: function () {
         return {}
     },
     props: ['pages'],
-    template:`
+    template: `
         <div class="j-table-page-bar">
             <div class="j-table-page-prev" actived="false">上一页</div>
             <div class="j-table-pages">
@@ -67,15 +67,30 @@ Vue.component('j-table-page-bar', {
     `
 });
 
-
+Vue.component('j-lyric-content', {
+    data: function () {
+        return {}
+    },
+    props: {lrcLoad: Array, lrcPlay: Array},
+    template: `
+    <div class="j-lyric-content" scrollable="true">
+        <p v-for="(lrc, index) in lrcLoad" @click="print" :actived="lrc.l == lrcPlay[0].l - 1">{{lrc.c}}</p>
+    </div>
+    `,
+    methods: {
+        print: function (e) {
+            this.$emit('print-top', e);
+        }
+    }
+});
 
 
 Vue.component('j-list', {
-    data: function() {
+    data: function () {
         return {}
     },
     props: ['dosls'],
-    template:`
+    template: `
         <div class="j-list">
             <div class="j-table j-table-rank">
                 <div class="j-table-head">
@@ -87,13 +102,13 @@ Vue.component('j-list', {
                             </a>
 
                         </div>
-                        <div class="j-tw j-tw-70">
+                        <div class="j-tw j-tw-60">
                             <span>标题</span>
                         </div>
-                        <div class="j-tw j-tw-10">
+                        <div class="j-tw j-tw-15">
                             <span>时长</span>
                         </div>
-                        <div class="j-tw j-tw-10">
+                        <div class="j-tw j-tw-15">
                             <span>歌手</span>
                         </div>
                     </div>
@@ -104,7 +119,7 @@ Vue.component('j-list', {
                         <div class="j-tw-10">
                             {{dosl.id}}
                         </div>
-                        <div class="j-tw-70">
+                        <div class="j-tw-60">
                             <a>{{dosl.title}}</a>
                             <div class="j-fun-group">
                                 <a href="#" class="j-btn j-btn-s">
@@ -118,10 +133,10 @@ Vue.component('j-list', {
                                 </a>
                             </div>
                         </div>
-                        <div class="j-tw-10">
+                        <div class="j-tw-15">
                             {{dosl.duration}}
                         </div>
-                        <div class="j-tw-10">
+                        <div class="j-tw-15">
                             {{dosl.singer}}
                         </div>
                     </div>
@@ -133,9 +148,52 @@ Vue.component('j-list', {
      `
 });
 
+Vue.component('j-dos-list', {
+    data: function () {
+        return {}
+    },
+    props: ['dosls'],
+    template: `
+        <div class="j-dos-list">
+           
+                
+                    <div class="j-dos-item" v-for="dosl in dosls">
+                        
+                        <div class="j-dos-item-l">
+                            <div class="j-dos-item-cell-60">
+                                <span class="j-icon j-icon-s" actived="true">
+                                    <i class="mdi mdi-16px mdi-play"></i>
+                                </span>
+                                <a>{{dosl.title}}</a>
+                            </div>
+                            
+                            <div class="j-dos-item-cell-20">
+                                {{dosl.singer}}
+                            </div>
+                            
+                            <div class="j-dos-item-cell-20">
+                                {{dosl.duration}}
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="j-dos-item-r">
+                            <a class="j-btn j-btn-s" actived="true">
+                                <i class="mdi mdi-minus mdi-16px"></i>
+                            </a>
+                        </div>
+                        
+                     </div>
+                        
+                        
+                   
 
-
-
+                
+                <j-table-page-bar v-bind:pages="dosls.length"></j-table-page-bar>
+            
+        </div>
+     `
+});
 
 
 let main = new Vue({
@@ -149,6 +207,10 @@ let main = new Vue({
         dragged: false,
         current: 2,
         volume: 0,
+        toSec: false,
+        toRight: false,
+        lrcLoad: [{c: "暂无歌词"}],
+        lrcPlay: [{c: "暂无歌词"}],
         cardList: [
             {title: '0'},
             {title: '1'},
@@ -375,7 +437,9 @@ let main = new Vue({
 
     },
     methods: {
+
         play: function () {
+            this.getLyric();
             if (this.$refs['j-audio'].paused) {
                 this.played = true;
                 this.$refs['j-audio'].play();
@@ -412,6 +476,7 @@ let main = new Vue({
             if (!this.dragged) {
                 this.currentTime = this.cont(currentTime, 'mm:ss');
                 let rate = currentTime / duration * 100;
+
                 // this.$refs['j-process-play'].style.width = rate + '%';
 
                 function animate(time) {
@@ -420,16 +485,65 @@ let main = new Vue({
                 }
 
                 let elem = this.$refs['j-process-play'];
-                let coords = { x: elem.style.width.replace('%','') };
+                let coords = {x: elem.style.width.replace('%', '')};
                 let tween = new TWEEN.Tween(coords, groupProcess)
-                    .to({ x: rate}, 2000)
+                    .to({x: rate}, 0)
                     .easing(TWEEN.Easing.Quadratic.Out)
-                    .onUpdate(function() {
-                        elem.style.width = coords.x +'%';
+                    .onUpdate(function () {
+                        elem.style.width = coords.x + '%';
                     })
                     .start();
 
                 animate();
+
+                let tmp;
+
+                while (this.lrcPlay.length > 1) {
+
+                    tmp = this.lrcPlay[0];
+
+                    if (tmp.t !== "") {
+                        if (currentTime >= parseInt(tmp.t)) {
+                            // console.log(tmp.t);
+                            // console.log("yes");
+                            // this.$refs['j-lyric-content'].$el.scrollTop = (tmp.l - 2) * 40;
+
+
+                            function animate(time) {
+                                requestAnimationFrame(animate);
+                                TWEEN.update(time);
+                            }
+
+                            let elem = this.$refs['j-lyric-content'].$el;
+
+                            let src = elem.scrollTop;
+                            let tar = (tmp.l - 2) * 40;
+
+                            // console.log("src:" + src +" " + "tar:" + tar);
+
+                            let pos = {x: src};
+                            let tween = new TWEEN.Tween(pos)
+                                .to({x: tar}, 300)
+                                .easing(TWEEN.Easing.Cubic.In)
+                                .onUpdate(function () {
+                                    elem.scrollTop = pos.x;
+                                })
+                                .start();
+
+                            animate();
+
+                            this.lrcPlay.shift();
+                            break;
+                        } else {
+                            break;
+                        }
+
+                    }
+
+                    this.lrcPlay.shift();
+
+                }
+
 
             }
 
@@ -437,6 +551,7 @@ let main = new Vue({
                 this.played = false;
                 this.$refs['j-audio'].pause();
             }
+
         },
 
         setDuration: function (time) {
@@ -580,20 +695,20 @@ let main = new Vue({
             }
 
             let elem = this.$refs['j-message-bar'];
-            let pos = { x:200, y: 150 };
+            let pos = {x: 200, y: 150};
             let tweenA = new TWEEN.Tween(pos)
-                .to({ x: 40 }, 300)
+                .to({x: 40}, 300)
                 .easing(TWEEN.Easing.Cubic.In)
-                .onUpdate(function() {
-                    elem.style.width = pos.x +'px';
+                .onUpdate(function () {
+                    elem.style.width = pos.x + 'px';
                 })
                 .start();
 
             let tweenB = new TWEEN.Tween(pos)
-                .to({ y: 25 }, 300)
+                .to({y: 25}, 300)
                 .easing(TWEEN.Easing.Cubic.In)
-                .onUpdate(function() {
-                    elem.style.bottom = pos.y +'px';
+                .onUpdate(function () {
+                    elem.style.bottom = pos.y + 'px';
                 });
 
             tweenA.chain(tweenB);
@@ -610,20 +725,20 @@ let main = new Vue({
             }
 
             let elem = this.$refs['j-message-bar'];
-            let pos = { x: 40, y: 25 };
+            let pos = {x: 40, y: 25};
             let tweenA = new TWEEN.Tween(pos)
-                .to({ y: 150 }, 300)
+                .to({y: 150}, 300)
                 .easing(TWEEN.Easing.Cubic.Out)
-                .onUpdate(function() {
-                    elem.style.bottom = pos.y +'px';
+                .onUpdate(function () {
+                    elem.style.bottom = pos.y + 'px';
                 })
                 .start();
 
             let tweenB = new TWEEN.Tween(pos)
-                .to({ x: 200 }, 300)
+                .to({x: 200}, 300)
                 .easing(TWEEN.Easing.Cubic.Out)
-                .onUpdate(function() {
-                    elem.style.width = pos.x +'px';
+                .onUpdate(function () {
+                    elem.style.width = pos.x + 'px';
                 });
 
 
@@ -633,17 +748,43 @@ let main = new Vue({
 
         },
 
-        searchFocus: function (e) {
-            this.$refs['j-right'].style.right="0";
+        right: function (e) {
+
+            let elem = this.$refs['j-right'];
+
+            elem.setAttribute("to", !JSON.parse(elem.getAttribute("to")));
+
+
+            // let to = JSON.parse(elem.getAttribute("to"));
+            // let o = JSON.parse(elem.getAttribute("o"));
+
+            // console.log(document.hasFocus() && document.activeElement === this.$refs['j-dos-list']);
+
+
+            // if (!to) {
+            //     this.$refs['j-btn-state'].focus();
+            //     elem.setAttribute("o", "true");
+            //     if (o) {
+            //         elem.setAttribute("o", "false");
+            //     }
+            //
+            // } else {
+            //     this.$refs['j-btn-state'].blur();
+            //     elem.setAttribute("o", "false");
+            // }
+
+
         },
 
-        searchBlur: function (e) {
+        rightFocus: function (e) {
             let elem = this.$refs['j-right'];
-            if (elem.getAttribute("over") == "false"){
-                elem.style.right="-333px";
-            } else {
-                this.$refs['j-search'].focus();
-            }
+            elem.setAttribute("to", "true");
+        },
+
+        rightBlur: function (e) {
+            let elem = this.$refs['j-right'];
+            elem.setAttribute("to", "false");
+            console.log(window.event.target);
         },
 
         rightIn: function (e) {
@@ -693,6 +834,136 @@ let main = new Vue({
 
         shuffle: function () {
             this.cardList = _.shuffle(this.cardList)
+        },
+
+        getLyric: function () {
+            // https://www.jianshu.com/p/7423b6142ca0
+
+            function Lyric(l, t, c) {
+                this.l = l;
+                this.t = t;
+                this.c = c;
+            }
+
+            let string =
+                `[00:00.08]陈粒 - 小半
+                [00:00.17]不敢回看
+                [00:02.41]左顾右盼不自然的暗自喜欢
+                [00:06.81]偷偷搭讪总没完地坐立难安
+                [00:11.15]试探说晚安
+                [00:12.92]多空泛又心酸
+                [00:17.66]低头呢喃
+                [00:19.94]对你的偏爱太过于明目张胆
+                [00:24.23]在原地打转的小丑伤心不断
+                [00:28.61]空空留遗憾
+                [00:30.43]多难堪又为难
+                [00:34.68]释然慵懒尽欢
+                [00:38.06]时间风干后你与我再无关
+                [00:43.41]没答案怎么办
+                [00:45.64]看不惯自我欺瞒
+                [00:51.54]纵容着喜欢的讨厌的
+                [00:54.77]宠溺的厌倦的
+                [00:56.99]一个个慢慢黯淡
+                [01:00.22]纵容着任性的随意的
+                [01:03.55]放肆的轻易的
+                [01:05.67]将所有欢脱倾翻
+                [01:08.94]不应该太心软不大胆
+                [01:12.28]太死板不果断
+                [01:14.45]玩弄着肆无忌惮
+                [01:17.58]不应该舍弃了死心了
+                [01:20.96]放手了断念了
+                [01:23.14]无可奈何不耐烦
+                [01:26.83]不算
+                [01:31.89]灯火阑珊
+                [01:34.11]我的心借了你的光是明是暗
+                [01:38.40]笑自己情绪太泛滥形只影单
+                [01:42.74]自嘲成习惯
+                [01:44.61]多敏感又难缠
+                [01:49.31]低头呢喃
+                [01:51.52]对你的偏爱太过于明目张胆
+                [01:55.86]在原地打转的小丑伤心不断
+                [02:00.20]空空留遗憾
+                [02:02.07]多难堪又为难
+                [02:06.41]释然慵懒尽欢
+                [02:09.69]时间风干后你与我再无关
+                [02:15.15]没答案怎么办
+                [02:17.32]看不惯自我欺瞒
+                [02:23.08]纵容着喜欢的讨厌的
+                [02:26.41]宠溺的厌倦的
+                [02:28.60]一个个慢慢黯淡
+                [02:31.73]纵容着任性的随意的
+                [02:35.17]放肆的轻易的
+                [02:37.30]将所有欢脱倾翻
+                [02:40.52]不应该太心软不大胆
+                [02:43.91]太死板不果断
+                [02:46.08]玩弄着肆无忌惮
+                [02:49.30]不应该舍弃了死心了
+                [02:52.59]放手了断念了
+                [02:54.76]无可奈何不耐烦
+                [03:15.54]任由着你躲闪我追赶
+                [03:18.77]你走散我呼喊
+                [03:20.95]是谁在泛泛而谈
+                [03:24.28]任由着你来了你笑了
+                [03:27.56]你走了不看我
+                [03:29.68]与理所当然分摊
+                [03:33.06]不明白残存的没用的
+                [03:36.29]多余的不必的
+                [03:38.46]破烂也在手紧攥
+                [03:41.59]不明白谁赧然谁无端
+                [03:44.97]谁古板谁极端
+                [03:47.36]无辜不知所以然
+                [03:50.02]不管
+                [03:50.47]纵容着喜欢的讨厌的
+                [03:53.70]宠溺的厌倦的
+                [03:55.87]一个个慢慢黯淡
+                [03:59.20]纵容着任性的随意的
+                [04:02.44]放肆的轻易的
+                [04:04.66]将所有欢脱倾翻
+                [04:07.88]不应该太心软不大胆
+                [04:11.17]太死板不果断
+                [04:13.29]玩弄着肆无忌惮
+                [04:16.58]不应该舍弃了死心了
+                [04:19.86]放手了断念了
+                [04:22.19]无可奈何不耐烦`
+            ;
+
+            let lrc = [];
+            let cnt = 0;
+
+            string.split('\n').map((string) => {
+
+                cnt += 1;
+
+                let regex = /\[([\d:\.]+)\](.*)/;
+                let matches = string.match(regex);
+                let p = new Lyric();
+
+                p.l = cnt;
+
+                if (matches) {
+                    p.c = matches[2];
+                    let array = matches[1].split(':');
+                    let mins = array[0];
+                    let seconds = array[1];
+                    let newTime = parseInt(mins) * 60 + parseFloat(seconds);
+                    p.t = newTime;
+                } else {
+                    p.t = "";
+                    p.c = string;
+                }
+
+                lrc.push(p);
+
+            });
+
+            this.lrcLoad = [].concat(lrc);
+            this.lrcPlay = [].concat(lrc);
+
+        },
+
+        printTop: function (e) {
+            console.log(e.target.offsetTop);
+            console.log(this.$refs['j-lyric-content'].$el.scrollTop);
         }
 
     }
