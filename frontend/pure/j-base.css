@@ -344,7 +344,7 @@ body {
 
     position: relative;
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - 100px);
     top: 0;
     left: 0;
     overflow: hidden;
@@ -821,9 +821,9 @@ body {
     position: absolute;
     right: -330px;
     width: 320px;
-    height: calc(100% - 80px);
+    height: calc(100% - 100px);
     background: #fff;
-    z-index: 1000;
+    z-index: 999;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -876,7 +876,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
+    height: 50px;
     width: 100%;
     /* 避免被后面的元素覆盖层级 */
     z-index: 1;
@@ -1177,15 +1177,15 @@ a.j-logo > img {
 .j-search-group {
     position: relative;
     display: inline-flex;
-    align-items: baseline;
+    align-items: center;
     width: 100%;
-    height: 30px !important;
+    height: 50px !important;
 
 }
 
 .j-search {
     width: 100%;
-    height: inherit;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     background: none;
@@ -1229,9 +1229,8 @@ a.j-logo > img {
 .j-btn-search {
     display: flex;
     position: absolute;
-    left: 0;
+    left: 6px;
     flex-shrink: 0;
-    margin: 6px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1244,9 +1243,8 @@ a.j-logo > img {
 .j-btn-clear{
     display: flex;
     position: absolute;
-    right: 0;
+    right: 6px;
     flex-shrink: 0;
-    margin: 6px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1934,6 +1932,19 @@ j-comment-item:first-child {
     color: #be4f45 !important;
 }
 
+.j-btn-icon-r{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    text-decoration: none;
+    color: #be4f45 !important;
+
+    width: 30px;
+    height: 30px;
+}
+
 .j-btn-full{
     width: 100%;
     height: inherit;
@@ -2253,7 +2264,7 @@ j-comment-item:first-child {
 .j-dos-list-wrap{
     position: relative;
     width: 100%;
-    height: calc(100% - 30px);
+    height: calc(100% - 80px);
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 0 10px;
@@ -2264,9 +2275,11 @@ j-comment-item:first-child {
 
 .j-dos-list{
     width: 100%;
+    padding: 10px 0
 }
 
-.j-btn-icon{
+.j-btn-icon,
+.j-dos-header{
     display: flex;
     position: sticky;
     align-items: center;
@@ -2282,10 +2295,16 @@ j-comment-item:first-child {
     -o-transition: background-color .3s;
     transition: background-color .3s;
 
+    box-sizing: border-box;
+
     cursor: pointer;
     color: #be4f45;
     z-index: 1;
 
+}
+
+.j-dos-header{
+    border-bottom: 1px solid #be4f45;
 }
 
 .j-btn-icon:hover{
@@ -2297,6 +2316,10 @@ j-comment-item:first-child {
     width: 100%;
     height: 30px;
     background-color: #fff;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 
     -webkit-transition: background-color .3s;
     -moz-transition: background-color .3s;

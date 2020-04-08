@@ -130,7 +130,6 @@
     -->
 
     <div class="j-right" ref="j-right" @mouseover="rightIn" to="false" o="false" over="false" @mouseout="rightOut">
-        <!--
 
         <div class="j-top">
             <div class="j-top-wrap" style="padding-right: 15px">
@@ -148,25 +147,26 @@
             </div>
         </div>
 
-        -->
 
         <div class="j-dos-list-wrap">
 
-            <div class="j-btn-icon">
+            <div class="j-dos-header j-btn-icon">
                 <a class="j-btn-full j-btn-icon-l">
                     <span class="j-icon j-icon-s" actived="true">
                         <i class="mdi mdi-playlist-music mdi-16px"></i>
                     </span>
                     <span>播放歌单</span>
                 </a>
-                <a class="j-btn j-btn-s j-btn-icon-r">
-                    <i class="mdi mdi-delete-outline mdi-16px"></i>
+                <a class="j-btn-icon-r">
+                    <i class="mdi mdi-menu-down mdi-16px"></i>
                 </a>
 
             </div>
 
 
             <j-dos-list v-bind:dosls="dosls"></j-dos-list>
+
+            <j-table-page-bar v-bind:pages="dosls.length"></j-table-page-bar>
 
         </div>
         <div class="j-bottom">

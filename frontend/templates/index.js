@@ -185,12 +185,6 @@ Vue.component('j-dos-list', {
                         
                      </div>
                         
-                        
-                   
-
-                
-                <j-table-page-bar v-bind:pages="dosls.length"></j-table-page-bar>
-            
         </div>
      `
 });
@@ -207,7 +201,7 @@ let main = new Vue({
         dragged: false,
         current: 2,
         volume: 0,
-        toSec: false,
+        toSec: true,
         toRight: false,
         lrcLoad: [{c: "暂无歌词"}],
         lrcPlay: [{c: "暂无歌词"}],
