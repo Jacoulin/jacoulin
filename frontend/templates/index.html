@@ -274,24 +274,7 @@
                 </div>
 
 
-                <div id="j-control-wrap">
-                    <div id="next">
-                        <a class="j-btn" actived="true">
-                            <i class="mdi mdi-skip-previous mdi-24px"></i>
-                        </a>
-                    </div>
-                    <div id="play" @click="play()">
-                        <a class="j-btn j-btn-l" actived="true">
-                            <!-- <i class="mdi mdi-play mdi-48px"></i> -->
-                            <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
-                        </a>
-                    </div>
-                    <div id="next">
-                        <a class="j-btn" actived="true">
-                            <i class="mdi mdi-skip-next mdi-24px"></i>
-                        </a>
-                    </div>
-                </div>
+
 
                 <div class="j-lyric-middle">
 
@@ -337,7 +320,7 @@
                         <p>放手了，断念了</p>
                         <p>无可奈何不耐烦，不算</p>
                         <p>灯火阑珊，我的心借了你的光是明是暗</p>
-                        <p>笑自己情绪太泛滥形只影单，自嘲成习惯</p>
+                        <p>笑自己情绪太泛滥形只影单，自嘲成习惯</p>胡腾
                         <p>多敏感又难缠，低头呢喃</p>
                         <p>对你的偏爱太过于明目张胆，在原地打转的小丑伤心不断</p>
                         <p>空空留遗憾，多难堪又为难</p>
@@ -386,6 +369,25 @@
 
                     -->
 
+                </div>
+
+                <div id="j-control-wrap">
+                    <div id="next">
+                        <a class="j-btn" actived="true">
+                            <i class="mdi mdi-skip-previous mdi-24px"></i>
+                        </a>
+                    </div>
+                    <div id="play" @click="play()">
+                        <a class="j-btn j-btn-l" actived="true">
+                            <!-- <i class="mdi mdi-play mdi-48px"></i> -->
+                            <i class="mdi mdi-48px" :class="{'mdi-play': !played, 'mdi-pause': played}"></i>
+                        </a>
+                    </div>
+                    <div id="next">
+                        <a class="j-btn" actived="true">
+                            <i class="mdi mdi-skip-next mdi-24px"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
