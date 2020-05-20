@@ -171,7 +171,7 @@ Vue.component('j-dos-list', {
                                 {{dosl.singer}}
                             </div>
                             
-                            <div class="j-dos-item-cell-20">
+                            <div class="j-dos-item-cell-20" style="justify-content: flex-end">
                                 {{dosl.duration}}
                             </div>
                         
