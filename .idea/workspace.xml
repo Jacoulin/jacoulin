@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bda5440-d556-4725-8b51-e0cee1e4bdd8" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/frontend/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jacoulin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jacoulin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/base-context-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-context-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/base-context.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-context.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/base-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-core-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-nr-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-nr-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-nr.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-nr.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-core-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-old-ie-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-old-ie-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-old-ie.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-old-ie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-units-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-units-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-units.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-units.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/grids.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/j-base.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/j-base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-core-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-dropdown-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-dropdown-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-dropdown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-horizontal-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-horizontal-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-horizontal.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-horizontal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-scrollable-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-scrollable-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-scrollable.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-scrollable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-skin-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-skin-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/menus.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-nr-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-nr-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-nr.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-nr.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/pure.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/tables-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/tables-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pure/tables.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/tables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jacoulin/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jacoulin/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jacoulin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jacoulin/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,14 +121,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jacoulin/Downloads/jacoulin - web/frontend/static/js",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jacoulin/Downloads/jacoulin-music&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/static/js" />
@@ -320,6 +265,7 @@
       <workItem from="1654847011267" duration="542000" />
       <workItem from="1654847576111" duration="117000" />
       <workItem from="1654847712745" duration="35795000" />
+      <workItem from="1655630053942" duration="1417000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1578241378238</created>
