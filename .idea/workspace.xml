@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bda5440-d556-4725-8b51-e0cee1e4bdd8" name="Default Changelist" comment="update">
+      <change afterPath="$PROJECT_DIR$/frontend/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jacoulin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jacoulin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/base-context-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-context-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/base-context.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-context.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/base-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-core-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/buttons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-nr-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-nr-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/forms-nr.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms-nr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-core-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-old-ie-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-old-ie-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive-old-ie.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive-old-ie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-units-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-units-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids-units.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids-units.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/grids.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/grids.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/j-base.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/j-base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-core-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-core-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-dropdown-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-dropdown-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-horizontal-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-horizontal-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-horizontal.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-horizontal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-scrollable-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-scrollable-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-scrollable.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-scrollable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-skin-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-skin-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus-skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus-skin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/menus.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/menus.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-nr-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-nr-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/pure-nr.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure-nr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/pure.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/pure.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/tables-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/tables-min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pure/tables.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/pure/tables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jacoulin/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jacoulin/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jacoulin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jacoulin/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>j-btn-chang</find>
+      <find>j-table-page-prev</find>
+      <find>j-sear</find>
+      <find>.j-table-page-bar</find>
+      <find>.j-se</find>
+      <find>.j-btn</find>
+      <find>j-sea</find>
+      <find>j-midd</find>
+      <find>j-main</find>
+      <find>to</find>
+      <find>j-right</find>
+      <find>right</find>
+      <find>j-table-page-bar</find>
+      <find>.j-dos-header</find>
+      <find>.j-botttom</find>
+      <find>.j-bot</find>
+      <find>j-contr</find>
+      <find>j-bottom-li</find>
+      <find>.j-bottom-list</find>
+      <find>.j-middle</find>
+      <find>scroll</find>
+      <find>j-</find>
+      <find>sec</find>
+      <find>j-control-wrap</find>
+      <find>j-bottom-wrap</find>
+      <find>j-control-wrap-cen</find>
+      <find>j-middle</find>
+      <find>j-lyric</find>
+      <find>j-nav-le</find>
+      <find>j-cover-</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$APPLICATION_CONFIG_DIR$/pycharm.vmoptions" />
+        <option value="$PROJECT_DIR$/frontend/static/css/home.css" />
+        <option value="$PROJECT_DIR$/frontend/templates/test.html" />
+        <option value="$PROJECT_DIR$/package-lock.json" />
+        <option value="$PROJECT_DIR$/frontend/templates/index.js" />
+        <option value="$PROJECT_DIR$/frontend/pure/j-base.css" />
+        <option value="$PROJECT_DIR$/frontend/templates/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="25" />
+    <option name="width" value="1440" />
+    <option name="height" value="830" />
+  </component>
+  <component name="ProjectId" id="298lPCa0Bt4D2cKozu7pAacd2Eg" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jacoulin - web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jacoulin - web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jacoulin - web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jacoulin - web" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jacoulin/Downloads/jacoulin - web/frontend/static/js",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/static/js" />
+      <recent name="$PROJECT_DIR$/frontend/static/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="jacoulin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="jacoulin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.views" />
+      <item itemvalue="Python.manage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bda5440-d556-4725-8b51-e0cee1e4bdd8" name="Default Changelist" comment="" />
+      <created>1578186661072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578186661072</updated>
+      <workItem from="1578186663900" duration="332000" />
+      <workItem from="1578187062804" duration="18206000" />
+      <workItem from="1578496871827" duration="3940000" />
+      <workItem from="1578502310382" duration="25652000" />
+      <workItem from="1578841516666" duration="73285000" />
+      <workItem from="1580703389458" duration="582000" />
+      <workItem from="1580704230433" duration="62434000" />
+      <workItem from="1581479808714" duration="707000" />
+      <workItem from="1581495161467" duration="77065000" />
+      <workItem from="1582037819114" duration="52748000" />
+      <workItem from="1582961015930" duration="49486000" />
+      <workItem from="1585555359484" duration="2364000" />
+      <workItem from="1585568106820" duration="1501000" />
+      <workItem from="1588326989343" duration="336000" />
+      <workItem from="1591415675390" duration="1675000" />
+      <workItem from="1598880599568" duration="6658000" />
+      <workItem from="1602991889275" duration="140000" />
+      <workItem from="1603073971128" duration="1632000" />
+      <workItem from="1603679636714" duration="4676000" />
+      <workItem from="1605444602756" duration="2790000" />
+      <workItem from="1605983063064" duration="283000" />
+      <workItem from="1605986552968" duration="18250000" />
+      <workItem from="1608345184169" duration="5626000" />
+      <workItem from="1610728448864" duration="2123000" />
+      <workItem from="1612792439728" duration="142000" />
+      <workItem from="1613004180885" duration="489000" />
+      <workItem from="1613473337412" duration="2377000" />
+      <workItem from="1615687888206" duration="1127000" />
+      <workItem from="1618153420950" duration="201000" />
+      <workItem from="1620015567235" duration="524000" />
+      <workItem from="1621116638748" duration="606000" />
+      <workItem from="1626273508947" duration="390000" />
+      <workItem from="1627395537808" duration="512000" />
+      <workItem from="1627808035760" duration="632000" />
+      <workItem from="1630228031501" duration="200000" />
+      <workItem from="1630684525254" duration="860000" />
+      <workItem from="1632237395591" duration="105000" />
+      <workItem from="1635563304200" duration="891000" />
+      <workItem from="1635867205147" duration="325000" />
+      <workItem from="1639226337987" duration="1077000" />
+      <workItem from="1640612247550" duration="547000" />
+      <workItem from="1643349619435" duration="529000" />
+      <workItem from="1644417017006" duration="546000" />
+      <workItem from="1645791108555" duration="824000" />
+      <workItem from="1649122725880" duration="1049000" />
+      <workItem from="1652502570371" duration="600000" />
+      <workItem from="1652503417929" duration="1038000" />
+      <workItem from="1652865441780" duration="309000" />
+      <workItem from="1653051057277" duration="136000" />
+      <workItem from="1653051414313" duration="579000" />
+      <workItem from="1653094897840" duration="598000" />
+      <workItem from="1653186470485" duration="566000" />
+      <workItem from="1653557513502" duration="597000" />
+      <workItem from="1653740517714" duration="597000" />
+      <workItem from="1654101321837" duration="1824000" />
+      <workItem from="1654313295061" duration="539000" />
+      <workItem from="1654846513751" duration="365000" />
+      <workItem from="1654847011267" duration="542000" />
+      <workItem from="1654847576111" duration="117000" />
+      <workItem from="1654847712745" duration="35795000" />
+    </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1578241378238</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578241378239</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1578241659311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578241659311</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1578328659007</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578328659007</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1578329025170</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578329025170</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1578413295624</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578413295624</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1578502323436</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578502323436</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <created>1578589869313</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578589869313</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <created>1578841653820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578841653820</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update">
+      <created>1578935345385</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578935345385</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update">
+      <created>1579190739178</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579190739178</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <created>1579360869590</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579360869590</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <created>1579371105400</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1579371105400</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <created>1579454556851</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1579454556851</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update">
+      <created>1579455445185</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1579455445185</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update">
+      <created>1581742753239</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1581742753239</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <created>1585749118611</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585749118611</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="426444000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1440" height="830" extended-state="1" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2825465" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/jacoulin___web$views.coverage" NAME="views Coverage Results" MODIFIED="1655569512628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/jacoulin___web$manage.coverage" NAME="manage Coverage Results" MODIFIED="1655621093753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/init.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/full_screen.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/Expression_3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/girl.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/hot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/photo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/refresh.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/add_pic_after.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/cat.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/back_03.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/back_02.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/add_pic_before.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/scale.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/search.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/xiaozhi.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/test.html" />
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/@mdi/font/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/images/back_01.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jacoulin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jacoulin/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-522">
+          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6058">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/js/init.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="118" column="20" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dc_id_mapping_qc_act_2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12631">
+          <caret line="743" column="10" selection-start-line="743" selection-start-column="10" selection-end-line="743" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/pure/j-base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17544">
+          <caret line="1032" column="18" selection-start-line="1032" selection-start-column="18" selection-end-line="1032" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7123">
+          <caret line="419" column="37" selection-start-line="419" selection-start-column="37" selection-end-line="419" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="113" column="63" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="411" selection-start-line="411" selection-end-line="411" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

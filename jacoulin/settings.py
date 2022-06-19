@@ -145,6 +145,7 @@ STATICFILES_DIRS = [
     ("images", os.path.join(BASE_DIR, 'frontend/static/images')),
     ("fonts", os.path.join(BASE_DIR, 'frontend/static/fonts')),
     ("css", os.path.join(BASE_DIR, 'frontend/static/css')),
+    ("pure", os.path.join(BASE_DIR, 'frontend/static/pure')),
     ("js", os.path.join(BASE_DIR, 'frontend/static/js')),
 ]
 #设置文件上传路径，图片上传、文件上传都会存放在此目录里

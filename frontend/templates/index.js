@@ -203,6 +203,7 @@ let main = new Vue({
         volume: 0,
         toSec: true,
         toRight: false,
+        toList: false,
         lrcLoad: [{c: "暂无歌词"}],
         lrcPlay: [{c: "暂无歌词"}],
         cardList: [
